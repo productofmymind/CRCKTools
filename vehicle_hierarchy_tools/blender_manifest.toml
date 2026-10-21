@@ -1,0 +1,13 @@
+schema_version = "1.0.0"
+
+id = "vehicle_hierarchy_tools"
+version = "0.15.0"
+name = "CRCKTools"
+tagline = "Vehicle tools for Sollumz: part tree, fixes, LODs, export"
+maintainer = "George"
+type = "add-on"
+
+blender_version_min = "4.2.0"
+
+license = ["SPDX:GPL-3.0-or-later"]
+tags = ["Object", "Import-Export"]

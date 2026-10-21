@@ -1,0 +1,1381 @@
+{
+  "version": 2,
+  "about": "Rules from the GTA V vehicle hierarchy reference (engine bone table and community guides), corrected where a real vehicle (astron) disagreed. conf: H confirmed in source or two sources, M one credible source or consistent convention, L inference. Severity: H error, M warning, L info.",
+  "names": [
+    "chassis chassis_dummy chassis_lowlod chassis_Control bodyshell unknown_id",
+    "door_dside_f door_dside_r door_pside_f door_pside_r door_hatch_l door_hatch_r handle_dside_f handle_dside_r handle_pside_f handle_pside_r bonnet boot petrolcap freightgrain_slidedoor",
+    "windscreen windscreen_r window_lf window_lf{1..3} window_lm window_lr window_lr{1..3} window_rf window_rf{1..3} window_rm window_rr window_rr{1..3}",
+    "wheel_lf wheel_rf wheel_lr wheel_rr wheel_lm{1..3} wheel_rm{1..3} wheel_f wheel_r wheel_lf{1..3}_dummy wheel_rf{1..3}_dummy wheel_lb{1..3}_dummy wheel_rb{1..3}_dummy",
+    "hub_lf hub_rf hub_lr hub_rr hub_lm{1..3} hub_rm{1..3} suspension_lf suspension_rf suspension_lr suspension_rr suspension_lm suspension_rm spring_lf spring_rf spring_lr spring_rr transmission_f transmission_m transmission_r wheelcover_l wheelcover_r steering struts",
+    "forks_u forks_l handlebars hbgrip_l hbgrip_r swingarm crank pedal_l pedal_r",
+    "headlight_l headlight_r taillight_l taillight_r indicator_lf indicator_lr indicator_rf indicator_rr brakelight_l brakelight_m brakelight_r reversinglight_l reversinglight_r extralight_{1..4} interiorlight dashglow doorlight_lf doorlight_lr doorlight_rf doorlight_rr neon_l neon_r neon_f neon_b light_cover emissives",
+    "bumper_f bumper_r wing_lf wing_rf wing_lr wing_rr spoiler roof roof2 soft_{1..13} numberplate exhaust exhaust_{2..16} engine engine_l engine_r engineblock overheat overheat_2 petroltank petroltank_l petroltank_r extra_{1..9} extra_ten extra_11 extra_12 break_extra_{1..10} misc_1 misc_2 misc_{a..z} mod_col_{1..5} bobble_base bobble_head bobble_hand dials moving_prop moving_prop2 static_prop static_prop2",
+    "seat_dside_f seat_pside_f seat_dside_r seat_pside_r seat_dside_r{1..7} seat_pside_r{1..7}",
+    "siren{1..20} siren_glass{1..20} searchlight_base searchlight_light",
+    "rotor_main rotor_main_2 rotor_rear rotor_rear_2 tail prop_{1..8} prop_left prop_right aileron_l aileron_r elevator_l elevator_r elevators rudder rudder2 rudder_2 rudder_l rudder_r airbrake_l airbrake_r wing_l wing_r wingtip_1 wingtip_2 afterburner nozzles_f nozzles_r slipstream_l slipstream_r gear_f gear_rl gear_rr gear_rm gear_lm1 gear_rm1 gear_door_fl gear_door_fr gear_door_rl1 gear_door_rl2 gear_door_rr1 gear_door_rr2 gear_door_rml gear_door_rmr rope_attach_a rope_attach_b pontoon_l pontoon_r",
+    "arm_{1..4} boom Boom_Driver bucket Lookat_LowrPiston_boom Lookat_UpprPiston_head shovel_2 shovel_3 stick scoop forks forks_attach fork_l fork_r mast carriage frame_{1..3} frame_pickup_{1..4} tipper tow_arm tow_mount_a tow_mount_b attach_female attach_male legs outriggers_l outriggers_r combine_auger combine_reel cutter_driver barracks freight_bogey freight_cont bogie_front bogie_rear draft_animal_attach_{lf,lm,lr,rf,rm,rr} no_ped_col_step_{l,r} no_ped_col_strut_1_{l,r} no_ped_col_strut_2_{l,r} vehicle_blocker",
+    "turret_{1,2,3}base turret_{1,2,3}barrel weapon_{1,2,3,4}{a,b,c,d} weapon_{1,2,3,4}{a,b,c,d}_rot ammobelt"
+  ],
+  "observed_in_vanilla": {
+    "note": "Names found in real vanilla vehicles (astron, cargobob5) that the engine table lacks. Without these the unknown-name check would flag vanilla bones.",
+    "names": [
+      "steeringwheel",
+      "plate",
+      "platelight",
+      "wheelmesh_lf",
+      "wheelmesh_lf_l1",
+      "wheelmesh_lf_l2",
+      "wheelmesh_lf_ng",
+      "cargodoor",
+      "rotor_main_slow",
+      "rotor_main_fast",
+      "rotor_rear_slow",
+      "rotor_rear_fast"
+    ]
+  },
+  "root": {
+    "name": "chassis",
+    "tag": 0,
+    "conf": "M"
+  },
+  "parents": {
+    "bodyshell": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "L"
+    },
+    "chassis_dummy": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "L"
+    },
+    "chassis_lowlod": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "L"
+    },
+    "door_dside_f": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M",
+      "joint": true
+    },
+    "door_pside_f": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M",
+      "joint": true
+    },
+    "door_dside_r": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M",
+      "joint": true
+    },
+    "door_pside_r": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M",
+      "joint": true
+    },
+    "handle_dside_f": {
+      "parents": [
+        "door_dside_f"
+      ],
+      "conf": "M"
+    },
+    "handle_pside_f": {
+      "parents": [
+        "door_pside_f"
+      ],
+      "conf": "M"
+    },
+    "handle_dside_r": {
+      "parents": [
+        "door_dside_r"
+      ],
+      "conf": "M"
+    },
+    "handle_pside_r": {
+      "parents": [
+        "door_pside_r"
+      ],
+      "conf": "M"
+    },
+    "bonnet": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M",
+      "joint": true
+    },
+    "boot": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M",
+      "joint": true
+    },
+    "windscreen": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M",
+      "glass": true
+    },
+    "windscreen_r": {
+      "parents": [
+        "chassis",
+        "boot"
+      ],
+      "conf": "M",
+      "glass": true,
+      "why": "Under boot on hatchbacks (seen on astron)."
+    },
+    "window_lf": {
+      "parents": [
+        "door_dside_f"
+      ],
+      "conf": "H",
+      "glass": true,
+      "door": "door_dside_f"
+    },
+    "window_rf": {
+      "parents": [
+        "door_pside_f"
+      ],
+      "conf": "H",
+      "glass": true,
+      "door": "door_pside_f"
+    },
+    "window_lr": {
+      "parents": [
+        "door_dside_r"
+      ],
+      "conf": "H",
+      "glass": true,
+      "door": "door_dside_r"
+    },
+    "window_rr": {
+      "parents": [
+        "door_pside_r"
+      ],
+      "conf": "H",
+      "glass": true,
+      "door": "door_pside_r"
+    },
+    "doorlight_lf": {
+      "parents": [
+        "door_dside_f",
+        "chassis"
+      ],
+      "conf": "L"
+    },
+    "doorlight_rf": {
+      "parents": [
+        "door_pside_f",
+        "chassis"
+      ],
+      "conf": "L"
+    },
+    "doorlight_lr": {
+      "parents": [
+        "door_dside_r",
+        "chassis"
+      ],
+      "conf": "L"
+    },
+    "doorlight_rr": {
+      "parents": [
+        "door_pside_r",
+        "chassis"
+      ],
+      "conf": "L"
+    },
+    "wheel_lf": {
+      "parents": [
+        "chassis",
+        "gear_*"
+      ],
+      "conf": "M",
+      "why": "Under a gear_* bone on helicopters (cargobob5)."
+    },
+    "wheel_rf": {
+      "parents": [
+        "chassis",
+        "gear_*"
+      ],
+      "conf": "M",
+      "why": "Under a gear_* bone on helicopters (cargobob5)."
+    },
+    "wheel_lr": {
+      "parents": [
+        "chassis",
+        "gear_*"
+      ],
+      "conf": "M",
+      "why": "Under a gear_* bone on helicopters (cargobob5)."
+    },
+    "wheel_rr": {
+      "parents": [
+        "chassis",
+        "gear_*"
+      ],
+      "conf": "M",
+      "why": "Under a gear_* bone on helicopters (cargobob5)."
+    },
+    "wheel_f": {
+      "parents": [
+        "forks_l",
+        "forks_u"
+      ],
+      "conf": "M"
+    },
+    "wheel_r": {
+      "parents": [
+        "swingarm"
+      ],
+      "conf": "M"
+    },
+    "bumper_f": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M"
+    },
+    "bumper_r": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M"
+    },
+    "engineblock": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "L"
+    },
+    "engine": {
+      "parents": [
+        "chassis",
+        "engineblock",
+        "misc_*"
+      ],
+      "conf": "M",
+      "why": "Seen under engineblock on astron, not chassis."
+    },
+    "exhaust": {
+      "parents": [
+        "chassis",
+        "engineblock",
+        "misc_*"
+      ],
+      "conf": "L",
+      "why": "Seen under a misc bone on astron."
+    },
+    "exhaust_*": {
+      "parents": [
+        "chassis",
+        "engineblock",
+        "misc_*"
+      ],
+      "conf": "L"
+    },
+    "headlight_l": {
+      "parents": [
+        "chassis",
+        "bumper_f"
+      ],
+      "conf": "M"
+    },
+    "headlight_r": {
+      "parents": [
+        "chassis",
+        "bumper_f"
+      ],
+      "conf": "M"
+    },
+    "taillight_l": {
+      "parents": [
+        "chassis",
+        "boot",
+        "bumper_r"
+      ],
+      "conf": "L"
+    },
+    "taillight_r": {
+      "parents": [
+        "chassis",
+        "boot",
+        "bumper_r"
+      ],
+      "conf": "L",
+      "why": "Under boot on astron."
+    },
+    "brakelight_*": {
+      "parents": [
+        "chassis",
+        "boot",
+        "bumper_r",
+        "misc_*"
+      ],
+      "conf": "L",
+      "why": "brakelight_m is under misc_g under boot on astron; brakelights are under bumper_r on warden."
+    },
+    "reversinglight_*": {
+      "parents": [
+        "chassis",
+        "boot"
+      ],
+      "conf": "L",
+      "why": "Under boot on astron."
+    },
+    "indicator_*": {
+      "parents": [
+        "chassis",
+        "boot",
+        "bumper_f",
+        "bumper_r"
+      ],
+      "conf": "M"
+    },
+    "seat_*": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M"
+    },
+    "steering": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M"
+    },
+    "hub_*": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "L"
+    },
+    "suspension_*": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M"
+    },
+    "siren_glass*": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "L"
+    },
+    "siren*": {
+      "parents": [
+        "chassis",
+        "tail"
+      ],
+      "conf": "M",
+      "why": "siren3 is under tail on cargobob5."
+    },
+    "searchlight_light": {
+      "parents": [
+        "searchlight_base"
+      ],
+      "conf": "M"
+    },
+    "rotor_main": {
+      "parents": [
+        "chassis"
+      ],
+      "conf": "M"
+    },
+    "rotor_rear": {
+      "parents": [
+        "tail",
+        "chassis"
+      ],
+      "conf": "L"
+    },
+    "mod_col_*": {
+      "parents": [
+        "chassis",
+        "boot"
+      ],
+      "conf": "L"
+    },
+    "wheelmesh_*": {
+      "parents": [
+        "wheel_lf"
+      ],
+      "conf": "M",
+      "why": "Under wheel_lf on all six vanilla vehicles; do not move them."
+    }
+  },
+  "joint_note": "Opening parts need a rotation limit (hinged) or translation limit (sliding) to become articulated links in the fragment; without one they are rigid with their parent.",
+  "profiles": {
+    "car": {
+      "required": [
+        "chassis",
+        "wheel_lf",
+        "wheel_rf",
+        "wheel_lr",
+        "wheel_rr",
+        "seat_dside_f",
+        "engine"
+      ]
+    },
+    "bike": {
+      "required": [
+        "chassis",
+        "forks_u",
+        "forks_l",
+        "handlebars",
+        "swingarm",
+        "wheel_f",
+        "wheel_r",
+        "seat_dside_f"
+      ]
+    },
+    "truck": {
+      "extends": "car"
+    },
+    "trailer": {
+      "required": [
+        "chassis",
+        "wheel_lr",
+        "wheel_rr"
+      ],
+      "forbidden": [
+        "engine",
+        "seat_dside_f"
+      ]
+    },
+    "heli": {
+      "required": [
+        "chassis",
+        "rotor_main",
+        "seat_dside_f"
+      ]
+    },
+    "plane": {
+      "required": [
+        "chassis",
+        "seat_dside_f"
+      ],
+      "recommended": [
+        "aileron_l",
+        "aileron_r",
+        "elevator_l",
+        "elevator_r",
+        "rudder"
+      ]
+    },
+    "emergency": {
+      "extends": "car",
+      "recommended": [
+        "siren1"
+      ]
+    }
+  },
+  "observed_parents": {
+    "vehicles": [
+      "akula",
+      "caracara3",
+      "cartuccia",
+      "conada2",
+      "laufer",
+      "lrcgt",
+      "merula",
+      "savage",
+      "velenogt",
+      "warden",
+      "cargobob5",
+      "chavosv6",
+      "asea",
+      "astron",
+      "buffalo4",
+      "nebula",
+      "sentinel5"
+    ],
+    "counts": {
+      "ammobelt": {
+        "misc_f": 1
+      },
+      "ammocrates": {
+        "chassis": 1
+      },
+      "bodyshell": {
+        "chassis": 17
+      },
+      "bonnet": {
+        "chassis": 13
+      },
+      "boot": {
+        "chassis": 13
+      },
+      "brakelight_l": {
+        "chassis": 8,
+        "bumper_r": 1,
+        "boot": 1
+      },
+      "brakelight_m": {
+        "misc_b": 1,
+        "chassis": 1,
+        "misc_g": 1,
+        "boot": 1
+      },
+      "brakelight_r": {
+        "chassis": 8,
+        "bumper_r": 1,
+        "boot": 1
+      },
+      "bumper_f": {
+        "chassis": 9
+      },
+      "bumper_r": {
+        "chassis": 9
+      },
+      "cargodoor": {
+        "chassis": 1
+      },
+      "chassis_dummy": {
+        "chassis": 17
+      },
+      "chassis_lowlod": {
+        "chassis": 14
+      },
+      "countermeasure": {
+        "chassis": 1
+      },
+      "dashglow": {
+        "chassis": 14
+      },
+      "dials": {
+        "chassis": 17
+      },
+      "door_dside_f": {
+        "chassis": 17
+      },
+      "door_dside_r": {
+        "chassis": 10
+      },
+      "door_hatch_l": {
+        "chassis": 1
+      },
+      "door_hatch_r": {
+        "chassis": 1
+      },
+      "door_pside_f": {
+        "chassis": 17
+      },
+      "door_pside_r": {
+        "chassis": 10
+      },
+      "doorlight_lf": {
+        "door_dside_f": 4
+      },
+      "doorlight_lr": {
+        "door_dside_r": 3
+      },
+      "doorlight_rf": {
+        "door_pside_f": 4
+      },
+      "doorlight_rr": {
+        "door_pside_r": 3
+      },
+      "engine": {
+        "chassis": 16,
+        "engineblock": 1
+      },
+      "engineblock": {
+        "chassis": 11
+      },
+      "exhaust": {
+        "chassis": 6,
+        "engineblock": 3,
+        "misc_b": 2,
+        "misc_w": 1,
+        "misc_k": 1,
+        "misc_c": 1,
+        "misc_n": 1,
+        "misc_a": 1
+      },
+      "exhaust_2": {
+        "chassis": 5,
+        "engineblock": 3,
+        "misc_w": 1,
+        "misc_m": 1,
+        "misc_k": 1,
+        "misc_c": 1,
+        "misc_b": 1,
+        "misc_n": 1
+      },
+      "exhaust_3": {
+        "chassis": 2,
+        "tail": 1,
+        "engineblock": 1
+      },
+      "exhaust_4": {
+        "chassis": 1,
+        "tail": 1,
+        "misc_m": 1,
+        "engineblock": 1
+      },
+      "extra_11": {
+        "chassis": 2
+      },
+      "extra_ten": {
+        "chassis": 2
+      },
+      "extralight_1": {
+        "chassis": 6,
+        "bumper_f": 2,
+        "misc_f": 1
+      },
+      "extralight_2": {
+        "chassis": 6,
+        "bumper_f": 2,
+        "misc_f": 1
+      },
+      "extralight_3": {
+        "chassis": 2,
+        "bumper_f": 1
+      },
+      "extralight_4": {
+        "chassis": 2,
+        "bumper_f": 1
+      },
+      "f_wing_l": {
+        "chassis": 1
+      },
+      "f_wing_r": {
+        "chassis": 1
+      },
+      "gear_door_fl": {
+        "chassis": 1
+      },
+      "gear_door_fr": {
+        "chassis": 1
+      },
+      "gear_door_rl1": {
+        "chassis": 2
+      },
+      "gear_door_rr1": {
+        "chassis": 2
+      },
+      "gear_f": {
+        "chassis": 2,
+        "tail": 1
+      },
+      "gear_rl": {
+        "chassis": 3
+      },
+      "gear_rr": {
+        "chassis": 2
+      },
+      "handle_dside_f": {
+        "door_dside_f": 16
+      },
+      "handle_dside_r": {
+        "door_dside_r": 10
+      },
+      "handle_pside_f": {
+        "door_pside_f": 16
+      },
+      "handle_pside_r": {
+        "door_pside_r": 10
+      },
+      "hbgrip_l": {
+        "steeringwheel": 4
+      },
+      "hbgrip_r": {
+        "steeringwheel": 4
+      },
+      "headlight_l": {
+        "chassis": 14,
+        "bonnet": 1
+      },
+      "headlight_r": {
+        "chassis": 14,
+        "bonnet": 1
+      },
+      "hub_lf": {
+        "chassis": 13
+      },
+      "hub_lm1": {
+        "chassis": 1
+      },
+      "hub_lr": {
+        "chassis": 13
+      },
+      "hub_rf": {
+        "chassis": 13
+      },
+      "hub_rm1": {
+        "chassis": 1
+      },
+      "hub_rr": {
+        "chassis": 13
+      },
+      "indicator_lf": {
+        "chassis": 5,
+        "bonnet": 1
+      },
+      "indicator_lr": {
+        "chassis": 10,
+        "boot": 1
+      },
+      "indicator_r": {
+        "chassis": 1
+      },
+      "indicator_rf": {
+        "chassis": 5,
+        "bonnet": 1
+      },
+      "indicator_rr": {
+        "chassis": 10,
+        "boot": 1
+      },
+      "interiorlight": {
+        "chassis": 16
+      },
+      "misc_a": {
+        "chassis": 5,
+        "engineblock": 4,
+        "bumper_f": 1,
+        "door_dside_f": 1,
+        "boot": 1,
+        "door_dside_r": 1
+      },
+      "misc_b": {
+        "chassis": 5,
+        "door_pside_f": 2,
+        "engineblock": 2,
+        "boot": 1,
+        "bumper_f": 1,
+        "door_pside_r": 1
+      },
+      "misc_c": {
+        "chassis": 4,
+        "door_dside_f": 2,
+        "boot": 2,
+        "engineblock": 2,
+        "bumper_f": 2
+      },
+      "misc_d": {
+        "chassis": 10,
+        "door_dside_f": 1,
+        "door_pside_f": 1,
+        "bumper_f": 1
+      },
+      "misc_e": {
+        "chassis": 8,
+        "engineblock": 2,
+        "door_dside_f": 1,
+        "boot": 1,
+        "door_pside_f": 1
+      },
+      "misc_f": {
+        "chassis": 6,
+        "door_pside_f": 1,
+        "weapon_1a": 1,
+        "engineblock": 1,
+        "bumper_r": 1,
+        "door_dside_f": 1,
+        "door_dside_r": 1,
+        "boot": 1
+      },
+      "misc_g": {
+        "chassis": 6,
+        "boot": 3,
+        "door_dside_f": 1,
+        "door_pside_r": 1,
+        "bumper_f": 1,
+        "engineblock": 1
+      },
+      "misc_h": {
+        "chassis": 4,
+        "door_pside_f": 2,
+        "engineblock": 1,
+        "bumper_r": 1,
+        "boot": 1,
+        "door_dside_f": 1
+      },
+      "misc_i": {
+        "chassis": 4,
+        "weapon_2a": 1,
+        "bonnet": 1,
+        "door_pside_f": 1,
+        "engineblock": 1
+      },
+      "misc_j": {
+        "door_dside_r": 2,
+        "weapon_2a_rot": 1,
+        "chassis": 1,
+        "door_dside_f": 1,
+        "engineblock": 1
+      },
+      "misc_k": {
+        "turret_2mod": 1,
+        "door_pside_r": 1,
+        "misc_e": 1,
+        "chassis": 1,
+        "door_pside_f": 1,
+        "wing_lf": 1
+      },
+      "misc_l": {
+        "chassis": 2,
+        "turret_2base": 1,
+        "door_dside_r": 1,
+        "engineblock": 1,
+        "wing_rf": 1,
+        "door_dside_f": 1
+      },
+      "misc_m": {
+        "chassis": 2,
+        "door_pside_f": 2,
+        "door_pside_r": 2,
+        "turret_1mod": 1,
+        "wing_lf": 1
+      },
+      "misc_n": {
+        "bonnet": 1,
+        "chassis": 1,
+        "engineblock": 1,
+        "door_dside_f": 1,
+        "wing_rf": 1
+      },
+      "misc_o": {
+        "turret_1barrel": 1,
+        "boot": 1,
+        "chassis": 1
+      },
+      "misc_p": {
+        "chassis": 2
+      },
+      "misc_q": {
+        "cargodoor": 1,
+        "door_dside_f": 1
+      },
+      "misc_r": {
+        "door_dside_f": 1,
+        "chassis": 1,
+        "door_pside_f": 1
+      },
+      "misc_s": {
+        "chassis": 2
+      },
+      "misc_t": {
+        "chassis": 2,
+        "bumper_r": 1
+      },
+      "misc_u": {
+        "boot": 2,
+        "turret_1base": 1
+      },
+      "misc_v": {
+        "bumper_f": 1
+      },
+      "misc_w": {
+        "chassis": 2,
+        "engineblock": 1
+      },
+      "misc_x": {
+        "chassis": 2,
+        "boot": 1
+      },
+      "misc_y": {
+        "chassis": 1,
+        "door_pside_f": 1
+      },
+      "misc_z": {
+        "engineblock": 1,
+        "chassis": 1
+      },
+      "mod_a": {
+        "chassis": 2
+      },
+      "mod_b": {
+        "chassis": 2
+      },
+      "mod_c": {
+        "chassis": 2
+      },
+      "mod_col_1": {
+        "chassis": 10,
+        "boot": 4
+      },
+      "mod_col_2": {
+        "chassis": 8,
+        "boot": 2
+      },
+      "mod_col_3": {
+        "boot": 5,
+        "chassis": 5
+      },
+      "mod_col_4": {
+        "boot": 4,
+        "chassis": 3
+      },
+      "mod_col_5": {
+        "boot": 4,
+        "chassis": 1
+      },
+      "mod_col_6": {
+        "chassis": 2,
+        "boot": 2
+      },
+      "mod_col_7": {
+        "boot": 3
+      },
+      "mod_col_8": {
+        "boot": 2,
+        "chassis": 1
+      },
+      "mod_d": {
+        "chassis": 2
+      },
+      "mod_e": {
+        "chassis": 2
+      },
+      "mod_f": {
+        "chassis": 2
+      },
+      "mod_g": {
+        "chassis": 2
+      },
+      "mod_h": {
+        "chassis": 2
+      },
+      "mod_i": {
+        "weapon_3b": 1
+      },
+      "mod_j": {
+        "weapon_3a": 1
+      },
+      "mod_k": {
+        "weapon_3a_rot": 1
+      },
+      "mod_l": {
+        "weapon_3b_rot": 1
+      },
+      "mod_m": {
+        "weapon_1a": 1
+      },
+      "mod_n": {
+        "weapon_1a_rot": 1
+      },
+      "neon_b": {
+        "chassis": 13
+      },
+      "neon_f": {
+        "chassis": 13
+      },
+      "neon_l": {
+        "chassis": 13
+      },
+      "neon_r": {
+        "chassis": 13
+      },
+      "outriggers_l": {
+        "chassis": 2
+      },
+      "outriggers_r": {
+        "chassis": 2
+      },
+      "overheat": {
+        "chassis": 16
+      },
+      "overheat_2": {
+        "chassis": 16
+      },
+      "overheat_3": {
+        "chassis": 1
+      },
+      "overheat_4": {
+        "chassis": 1
+      },
+      "overheat_5": {
+        "chassis": 1
+      },
+      "overheat_6": {
+        "chassis": 1
+      },
+      "overheat_7": {
+        "chassis": 1
+      },
+      "overheat_8": {
+        "chassis": 1
+      },
+      "petroltank": {
+        "chassis": 3
+      },
+      "plate": {
+        "boot": 1
+      },
+      "platelight": {
+        "chassis": 8,
+        "boot": 3,
+        "bumper_r": 2
+      },
+      "plough": {
+        "chassis": 1
+      },
+      "reversinglight_l": {
+        "chassis": 8,
+        "boot": 5
+      },
+      "reversinglight_r": {
+        "chassis": 8,
+        "boot": 5
+      },
+      "rotor_main": {
+        "chassis": 4
+      },
+      "rotor_main_fast": {
+        "rotor_main": 4
+      },
+      "rotor_main_slow": {
+        "rotor_main": 4
+      },
+      "rotor_rear": {
+        "tail": 3,
+        "chassis": 1
+      },
+      "rotor_rear_fast": {
+        "rotor_rear": 3
+      },
+      "rotor_rear_slow": {
+        "rotor_rear": 3
+      },
+      "seat_dside_f": {
+        "chassis": 17
+      },
+      "seat_dside_r": {
+        "chassis": 12
+      },
+      "seat_dside_r1": {
+        "turret_1base": 1,
+        "chassis": 1
+      },
+      "seat_dside_r2": {
+        "chassis": 1
+      },
+      "seat_dside_r3": {
+        "chassis": 1
+      },
+      "seat_dside_r4": {
+        "chassis": 1
+      },
+      "seat_dside_r5": {
+        "chassis": 1
+      },
+      "seat_dside_r6": {
+        "chassis": 1
+      },
+      "seat_pside_f": {
+        "chassis": 17
+      },
+      "seat_pside_r": {
+        "chassis": 12
+      },
+      "seat_pside_r1": {
+        "chassis": 1
+      },
+      "seat_pside_r2": {
+        "chassis": 1
+      },
+      "seat_pside_r3": {
+        "chassis": 1
+      },
+      "seat_pside_r4": {
+        "chassis": 1
+      },
+      "seat_pside_r5": {
+        "chassis": 1
+      },
+      "seat_pside_r6": {
+        "chassis": 1
+      },
+      "siren1": {
+        "f_wing_r": 1,
+        "tail": 1,
+        "outriggers_r": 1,
+        "chassis": 1
+      },
+      "siren2": {
+        "f_wing_l": 1,
+        "tail": 1,
+        "outriggers_l": 1,
+        "chassis": 1
+      },
+      "siren3": {
+        "tail": 4
+      },
+      "siren4": {
+        "chassis": 3
+      },
+      "slipstream_l": {
+        "chassis": 13
+      },
+      "slipstream_r": {
+        "chassis": 13
+      },
+      "steeringwheel": {
+        "chassis": 17
+      },
+      "suspension_lf": {
+        "chassis": 13
+      },
+      "suspension_lr": {
+        "chassis": 12
+      },
+      "suspension_rf": {
+        "chassis": 13
+      },
+      "suspension_rr": {
+        "chassis": 12
+      },
+      "tail": {
+        "chassis": 4
+      },
+      "taillight_l": {
+        "chassis": 11,
+        "boot": 2
+      },
+      "taillight_r": {
+        "chassis": 10,
+        "boot": 3
+      },
+      "tow_mount_a": {
+        "chassis": 1
+      },
+      "tow_mount_b": {
+        "chassis": 1
+      },
+      "transmission_f": {
+        "chassis": 1
+      },
+      "transmission_r": {
+        "chassis": 1
+      },
+      "turret_1barrel": {
+        "turret_1base": 2
+      },
+      "turret_1base": {
+        "chassis": 2,
+        "turret_1mod": 1
+      },
+      "turret_1mod": {
+        "chassis": 1
+      },
+      "turret_2barrel": {
+        "turret_2base": 1
+      },
+      "turret_2base": {
+        "turret_2mod": 1
+      },
+      "turret_2mod": {
+        "chassis": 1
+      },
+      "turret_grip2_l": {
+        "turret_2barrel": 1
+      },
+      "turret_grip2_r": {
+        "turret_2barrel": 1
+      },
+      "turret_grip_l": {
+        "weapon_1a": 1
+      },
+      "turret_grip_r": {
+        "weapon_1a": 1
+      },
+      "weapon_1a": {
+        "turret_1barrel": 2,
+        "outriggers_l": 1,
+        "chassis": 1,
+        "misc_x": 1
+      },
+      "weapon_1a_rot": {
+        "weapon_1a": 2,
+        "chassis": 1
+      },
+      "weapon_1b": {
+        "outriggers_r": 1,
+        "misc_y": 1
+      },
+      "weapon_1b_rot": {
+        "weapon_1b": 1
+      },
+      "weapon_2a": {
+        "chassis": 2,
+        "turret_2barrel": 1,
+        "outriggers_l": 1
+      },
+      "weapon_2a_rot": {
+        "weapon_2a": 1
+      },
+      "weapon_2b": {
+        "chassis": 2,
+        "outriggers_r": 1
+      },
+      "weapon_2c": {
+        "chassis": 1,
+        "outriggers_l": 1
+      },
+      "weapon_2d": {
+        "chassis": 1,
+        "outriggers_r": 1
+      },
+      "weapon_2e": {
+        "chassis": 1
+      },
+      "weapon_2f": {
+        "chassis": 1
+      },
+      "weapon_2g": {
+        "chassis": 1
+      },
+      "weapon_2h": {
+        "chassis": 1
+      },
+      "weapon_3a": {
+        "turret_1barrel": 1,
+        "turret_1base": 1
+      },
+      "weapon_3a_rot": {
+        "weapon_3a": 1
+      },
+      "weapon_3b": {
+        "turret_1barrel": 1
+      },
+      "weapon_3b_rot": {
+        "weapon_3b": 1
+      },
+      "weapon_4a": {
+        "f_wing_l": 1
+      },
+      "weapon_4a_rot": {
+        "weapon_4a": 1
+      },
+      "weapon_4b": {
+        "f_wing_r": 1
+      },
+      "weapon_4b_rot": {
+        "weapon_4b": 1
+      },
+      "weapon_5a": {
+        "chassis": 1
+      },
+      "weapon_5b": {
+        "chassis": 1
+      },
+      "wedge": {
+        "chassis": 1
+      },
+      "wheel_lf": {
+        "chassis": 14,
+        "gear_f": 2,
+        "gear_rl": 1
+      },
+      "wheel_lm1": {
+        "chassis": 1
+      },
+      "wheel_lr": {
+        "chassis": 14,
+        "gear_rl": 2,
+        "gear_f": 1
+      },
+      "wheel_rf": {
+        "chassis": 14,
+        "gear_rr": 1
+      },
+      "wheel_rm1": {
+        "chassis": 1
+      },
+      "wheel_rr": {
+        "chassis": 14,
+        "gear_rr": 1,
+        "gear_rl": 1
+      },
+      "wheelmesh_lf": {
+        "wheel_lf": 16
+      },
+      "wheelmesh_lf_l1": {
+        "wheel_lf": 16
+      },
+      "wheelmesh_lf_l2": {
+        "wheel_lf": 16
+      },
+      "wheelmesh_lf_ng": {
+        "wheel_lf": 16
+      },
+      "window_lf": {
+        "door_dside_f": 17
+      },
+      "window_lm": {
+        "chassis": 4
+      },
+      "window_lm1": {
+        "chassis": 1
+      },
+      "window_lm2": {
+        "chassis": 1
+      },
+      "window_lm3": {
+        "chassis": 1
+      },
+      "window_lr": {
+        "door_dside_r": 9,
+        "chassis": 2,
+        "door_dside_f": 1
+      },
+      "window_rf": {
+        "door_pside_f": 17
+      },
+      "window_rm": {
+        "chassis": 4
+      },
+      "window_rm1": {
+        "chassis": 1
+      },
+      "window_rm2": {
+        "chassis": 1
+      },
+      "window_rm3": {
+        "chassis": 1
+      },
+      "window_rm4": {
+        "chassis": 1
+      },
+      "window_rm5": {
+        "chassis": 1
+      },
+      "window_rr": {
+        "door_pside_r": 9,
+        "chassis": 2,
+        "door_pside_f": 1
+      },
+      "windscreen": {
+        "chassis": 17
+      },
+      "windscreen_r": {
+        "chassis": 8,
+        "boot": 6
+      },
+      "wing_lf": {
+        "chassis": 8
+      },
+      "wing_rf": {
+        "chassis": 8
+      }
+    }
+  }
+}

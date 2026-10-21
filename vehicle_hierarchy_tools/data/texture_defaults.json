@@ -1,0 +1,1171 @@
+{
+ "vehicles": [
+  "akula",
+  "caracara3",
+  "cartuccia",
+  "conada2",
+  "laufer",
+  "lrcgt",
+  "merula",
+  "savage",
+  "velenogt",
+  "warden"
+ ],
+ "names": {
+  "2_prop_blades2_prop_blades_a": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "2_prop_blades_a": {
+   "vehicles": 3,
+   "own": 3
+  },
+  "akula_interior2": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "akula_interior_ng": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "akula_minigun": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "akula_minigun_n": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "akula_minigun_spec": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "akula_panels": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "akula_panels_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "akula_worn": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "aluminium_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "aluminium_s": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "annihilator2_missile": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "annihilator2_missile_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "autarch_detail_dash": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "autarch_dial_detail": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "autarch_interior": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "baller7_interior": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "baller_badge": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "baller_badge_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "black": {
+   "vehicles": 9,
+   "own": 0
+  },
+  "blank": {
+   "vehicles": 10,
+   "own": 10
+  },
+  "blank_normal": {
+   "vehicles": 8,
+   "own": 0
+  },
+  "calico_turbo": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "calico_turbo_n2": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "calico_turbo_s": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "cara_lights": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "caracara3_metal_base": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "caracara3_metal_scoop_d": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "caracara3_metal_scoop_s": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "caracara3_metal_worn_s": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "carbon_interior_shader_spec": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "carbon_mesh_shader_spec": {
+   "vehicles": 4,
+   "own": 0
+  },
+  "carcara_interior2": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "cargonet_brown": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "cargonet_normal": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "cargoplane_cargohold": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "cartuccia_lights": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "cavalcade3_badges": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "cavalcade3_badges_nrm": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "cavalvade_interior": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "conada2_decals": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "conada2_panels": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "conada2_panels_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "feltzer_badges": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "feltzer_badges_normal": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "flyer_interior_hd": {
+   "vehicles": 3,
+   "own": 0
+  },
+  "flyer_interior_seat_hd": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "flyer_seat_hd_spec": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "fmj_detail_dash": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "fmj_dial_detail": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "furia_badges": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "furia_badges_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "generic_cav_detail_dash": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "generic_cav_detail_dash_spec": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "generic_cav_detail_pack": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "gp1_dash_detail": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "gp1_dash_detail_s": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "gp1_detail_d": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "granger2_dash": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "granger2_dash_s": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "granger2_detail": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "granger2_interior": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "heli_blades2_prop_blades_a": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "itali_dash": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "itali_dash_s": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "itali_detail": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "itali_dials": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "itali_std": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "italigto_badge": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "italigto_badge_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "laufer_badges": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "laufer_badges_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "laufer_lights": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "lrcgt_detail_d": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "lrcgt_detail_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "lrcgt_detail_s": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "lrcgt_lights": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "lrcgt_livery8": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "merula_lights": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "muscle_mod_dash_w": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "muscle_mod_detail_w": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "muscle_mod_interior_w": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "muscle_mod_spec": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "nebula_turbo": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "nebula_turbo_n2": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "nebula_turbo_s": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "nodirt": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "normal_flat_small": {
+   "vehicles": 3,
+   "own": 3
+  },
+  "plate01": {
+   "vehicles": 7,
+   "own": 0
+  },
+  "plate01_n": {
+   "vehicles": 7,
+   "own": 0
+  },
+  "rc_spring_alpha": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "rc_spring_normal": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "rc_spring_normal2": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "rc_spring_orangerc_spring_alpha": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "rc_spring_orangerc_spring_alpha2": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "rc_spring_spec2": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "riata_badges": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "riata_badges_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "savage_camo_1024": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "savage_decals_512": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "savage_flyer_interior": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "savage_interior": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "savage_panels_512": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "savage_panels_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "script_rt_dials_banshee": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "script_rt_dials_cavalcade": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "script_rt_dials_feltzer": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "script_rt_dials_itali": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "script_rt_dials_lazer": {
+   "vehicles": 2,
+   "own": 0
+  },
+  "script_rt_dials_maverick": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "script_rt_dials_race": {
+   "vehicles": 3,
+   "own": 0
+  },
+  "sentinel5_black": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "smod_racedetail_d": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "technical_gun": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "technical_gun_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "technical_gun_s": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "vehicle_dials_smallspec": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "vehicle_generic_alloy_silver_spec": {
+   "vehicles": 5,
+   "own": 0
+  },
+  "vehicle_generic_carbon": {
+   "vehicles": 4,
+   "own": 0
+  },
+  "vehicle_generic_detail2": {
+   "vehicles": 10,
+   "own": 0
+  },
+  "vehicle_generic_detail2_normal": {
+   "vehicles": 10,
+   "own": 0
+  },
+  "vehicle_generic_detail_spec": {
+   "vehicles": 10,
+   "own": 0
+  },
+  "vehicle_generic_detail_stitch": {
+   "vehicles": 7,
+   "own": 0
+  },
+  "vehicle_generic_doorshut": {
+   "vehicles": 10,
+   "own": 0
+  },
+  "vehicle_generic_doorshut_normal": {
+   "vehicles": 10,
+   "own": 0
+  },
+  "vehicle_generic_glassdirt": {
+   "vehicles": 10,
+   "own": 0
+  },
+  "vehicle_generic_glasswindows2": {
+   "vehicles": 10,
+   "own": 0
+  },
+  "vehicle_generic_leather2_n": {
+   "vehicles": 7,
+   "own": 0
+  },
+  "vehicle_generic_mesh3": {
+   "vehicles": 4,
+   "own": 4
+  },
+  "vehicle_generic_mesh3_normal": {
+   "vehicles": 5,
+   "own": 5
+  },
+  "vehicle_generic_mesh3_spec": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "vehicle_generic_mesh4": {
+   "vehicles": 4,
+   "own": 4
+  },
+  "vehicle_generic_mesh_3": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "vehicle_generic_mesh_3a": {
+   "vehicles": 2,
+   "own": 2
+  },
+  "vehicle_generic_plate_font": {
+   "vehicles": 7,
+   "own": 0
+  },
+  "vehicle_generic_plate_font_n": {
+   "vehicles": 7,
+   "own": 0
+  },
+  "vehicle_generic_smallspecmap": {
+   "vehicles": 10,
+   "own": 0
+  },
+  "vehicle_generic_smallspecmap2": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "vehicle_generic_tyrewall_dirt": {
+   "vehicles": 9,
+   "own": 0
+  },
+  "vehicle_generic_tyrewall_normal": {
+   "vehicles": 9,
+   "own": 0
+  },
+  "vehicle_generic_tyrewall_spec": {
+   "vehicles": 9,
+   "own": 0
+  },
+  "vehicle_generic_tyrewallblack": {
+   "vehicles": 9,
+   "own": 0
+  },
+  "vehicle_generic_worn_diff": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "vehicle_generic_worn_env1": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "vehicle_generic_worn_env2": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "vehicle_generic_worn_spc": {
+   "vehicles": 1,
+   "own": 0
+  },
+  "vehicle_genericmud_car": {
+   "vehicles": 10,
+   "own": 0
+  },
+  "vehicle_leather2_n": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "velenogt_lights": {
+   "vehicles": 1,
+   "own": 1
+  },
+  "warden_lights": {
+   "vehicles": 1,
+   "own": 1
+  }
+ },
+ "shaders": {
+  "default.sps": {
+   "materials": 1,
+   "samplers": {
+    "DiffuseSampler": {
+     "(none)": 1
+    }
+   }
+  },
+  "vehicle_badges.sps": {
+   "materials": 12,
+   "samplers": {
+    "DiffuseSampler": {
+     "akula_panels": 1,
+     "rc_spring_orangerc_spring_alpha2": 1,
+     "riata_badges": 1,
+     "rc_spring_orangerc_spring_alpha": 1,
+     "italigto_badge": 1,
+     "conada2_decals": 1,
+     "laufer_badges": 1,
+     "feltzer_badges": 1,
+     "cavalcade3_badges": 1,
+     "savage_decals_512": 1,
+     "furia_badges": 1,
+     "baller_badge": 1
+    },
+    "DamageSampler": {
+     "(none)": 12
+    },
+    "BumpSampler": {
+     "blank_normal": 3,
+     "rc_spring_normal2": 1,
+     "riata_badges_n": 1,
+     "rc_spring_normal": 1,
+     "italigto_badge_n": 1,
+     "laufer_badges_n": 1,
+     "feltzer_badges_normal": 1,
+     "cavalcade3_badges_nrm": 1,
+     "furia_badges_n": 1,
+     "baller_badge_n": 1
+    },
+    "SpecSampler": {
+     "black": 1,
+     "rc_spring_spec2": 1,
+     "carbon_interior_shader_spec": 1,
+     "rc_spring_alpha": 1,
+     "italigto_badge": 1,
+     "conada2_decals": 1,
+     "laufer_badges": 1,
+     "feltzer_badges": 1,
+     "cavalcade3_badges": 1,
+     "vehicle_generic_smallspecmap2": 1,
+     "furia_badges": 1,
+     "vehicle_generic_smallspecmap": 1
+    }
+   }
+  },
+  "vehicle_blurredrotor.sps": {
+   "materials": 3,
+   "samplers": {
+    "DiffuseSampler": {
+     "heli_blades2_prop_blades_a": 1,
+     "2_prop_blades2_prop_blades_a": 2
+    },
+    "SpecSampler": {
+     "2_prop_blades_a": 3
+    }
+   }
+  },
+  "vehicle_cutout.sps": {
+   "materials": 4,
+   "samplers": {
+    "DiffuseSampler": {
+     "vehicle_generic_mesh_3a": 2,
+     "cargonet_brown": 1,
+     "vehicle_generic_mesh_3": 1
+    },
+    "DamageSampler": {
+     "(none)": 4
+    },
+    "BumpSampler": {
+     "vehicle_generic_mesh3_normal": 3,
+     "cargonet_normal": 1
+    },
+    "SpecSampler": {
+     "vehicle_generic_mesh3": 1,
+     "vehicle_generic_smallspecmap": 1,
+     "vehicle_generic_mesh3_spec": 2
+    }
+   }
+  },
+  "vehicle_dash_emissive.sps": {
+   "materials": 12,
+   "samplers": {
+    "DiffuseSampler": {
+     "script_rt_dials_lazer": 3,
+     "script_rt_dials_cavalcade": 1,
+     "script_rt_dials_itali": 1,
+     "script_rt_dials_maverick": 1,
+     "script_rt_dials_race": 3,
+     "script_rt_dials_feltzer": 1,
+     "script_rt_dials_banshee": 1,
+     "granger2_detail": 1
+    },
+    "DamageSampler": {
+     "(none)": 12
+    },
+    "SpecSampler": {
+     "black": 4,
+     "vehicle_dials_smallspec": 2,
+     "vehicle_generic_smallspecmap": 5,
+     "blank": 1
+    }
+   }
+  },
+  "vehicle_dash_emissive_opaque.sps": {
+   "materials": 8,
+   "samplers": {
+    "DiffuseSampler": {
+     "generic_cav_detail_pack": 1,
+     "itali_dials": 1,
+     "flyer_interior_hd": 2,
+     "granger2_detail": 1,
+     "gp1_detail_d": 1,
+     "muscle_mod_detail_w": 1,
+     "autarch_dial_detail": 1
+    },
+    "DamageSampler": {
+     "(none)": 8
+    },
+    "SpecSampler": {
+     "black": 5,
+     "vehicle_dials_smallspec": 2,
+     "vehicle_generic_smallspecmap": 1
+    }
+   }
+  },
+  "vehicle_decal.sps": {
+   "materials": 7,
+   "samplers": {
+    "DiffuseSampler": {
+     "vehicle_generic_detail_stitch": 7
+    },
+    "DamageSampler": {
+     "(none)": 7
+    },
+    "SpecSampler": {
+     "vehicle_generic_detail_stitch": 7
+    }
+   }
+  },
+  "vehicle_detail2.sps": {
+   "materials": 13,
+   "samplers": {
+    "DiffuseSampler": {
+     "generic_cav_detail_dash": 1,
+     "itali_dash": 2,
+     "flyer_interior_seat_hd": 1,
+     "granger2_dash": 2,
+     "gp1_dash_detail": 2,
+     "gp1_detail_d": 1,
+     "muscle_mod_dash_w": 2,
+     "fmj_detail_dash": 1,
+     "granger2_interior": 1
+    },
+    "DamageSampler": {
+     "(none)": 13
+    },
+    "DetailSampler": {
+     "vehicle_generic_leather2_n": 10,
+     "vehicle_leather2_n": 2,
+     "normal_flat_small": 1
+    },
+    "SpecSampler": {
+     "generic_cav_detail_dash_spec": 1,
+     "itali_dash_s": 2,
+     "flyer_seat_hd_spec": 1,
+     "granger2_dash_s": 2,
+     "gp1_dash_detail_s": 2,
+     "black": 1,
+     "muscle_mod_spec": 2,
+     "autarch_detail_dash": 1,
+     "vehicle_generic_smallspecmap": 1
+    }
+   }
+  },
+  "vehicle_emissive_opaque.sps": {
+   "materials": 1,
+   "samplers": {
+    "DiffuseSampler": {
+     "smod_racedetail_d": 1
+    },
+    "DamageSampler": {
+     "(none)": 1
+    },
+    "DirtSampler": {
+     "nodirt": 1
+    },
+    "SpecSampler": {
+     "black": 1
+    }
+   }
+  },
+  "vehicle_interior2.sps": {
+   "materials": 32,
+   "samplers": {
+    "DiffuseSampler": {
+     "flyer_interior_hd": 3,
+     "akula_interior_ng": 2,
+     "akula_interior2": 2,
+     "carcara_interior2": 1,
+     "cavalvade_interior": 1,
+     "generic_cav_detail_pack": 1,
+     "itali_std": 2,
+     "itali_detail": 2,
+     "vehicle_generic_carbon": 3,
+     "cargoplane_cargohold": 1,
+     "granger2_interior": 1,
+     "granger2_detail": 2,
+     "baller7_interior": 2,
+     "gp1_detail_d": 1,
+     "muscle_mod_interior_w": 2,
+     "muscle_mod_detail_w": 2,
+     "savage_flyer_interior": 1,
+     "savage_interior": 1,
+     "autarch_interior": 1,
+     "fmj_dial_detail": 1
+    },
+    "DamageSampler": {
+     "(none)": 32
+    },
+    "SpecSampler": {
+     "vehicle_generic_smallspecmap": 29,
+     "black": 3
+    }
+   }
+  },
+  "vehicle_licenseplate.sps": {
+   "materials": 7,
+   "samplers": {
+    "DamageSampler": {
+     "(none)": 7
+    },
+    "DirtSampler": {
+     "vehicle_genericmud_car": 7
+    },
+    "PlateBgSampler": {
+     "plate01": 7
+    },
+    "PlateBgBumpSampler": {
+     "plate01_n": 7
+    },
+    "FontSampler": {
+     "vehicle_generic_plate_font": 7
+    },
+    "FontNormalSampler": {
+     "vehicle_generic_plate_font_n": 7
+    }
+   }
+  },
+  "vehicle_lightsemissive.sps": {
+   "materials": 8,
+   "samplers": {
+    "DiffuseSampler": {
+     "vehicle_generic_detail2": 1,
+     "cara_lights": 1,
+     "cartuccia_lights": 1,
+     "laufer_lights": 1,
+     "lrcgt_lights": 1,
+     "merula_lights": 1,
+     "velenogt_lights": 1,
+     "warden_lights": 1
+    },
+    "DamageSampler": {
+     "(none)": 8
+    },
+    "DirtSampler": {
+     "vehicle_genericmud_car": 1,
+     "vehicle_generic_glassdirt": 7
+    },
+    "SpecSampler": {
+     "vehicle_generic_detail_spec": 1,
+     "vehicle_generic_smallspecmap": 7
+    }
+   }
+  },
+  "vehicle_mesh.sps": {
+   "materials": 35,
+   "samplers": {
+    "DiffuseSampler": {
+     "vehicle_generic_detail2": 13,
+     "akula_minigun": 2,
+     "akula_interior_ng": 1,
+     "vehicle_generic_mesh3": 3,
+     "technical_gun": 1,
+     "caracara3_metal_base": 1,
+     "caracara3_metal_scoop_d": 1,
+     "vehicle_generic_carbon": 4,
+     "vehicle_generic_mesh4": 4,
+     "vehicle_generic_smallspecmap": 1,
+     "annihilator2_missile": 1,
+     "lrcgt_detail_d": 1,
+     "nebula_turbo": 1,
+     "calico_turbo": 1
+    },
+    "DamageSampler": {
+     "(none)": 35
+    },
+    "DirtSampler": {
+     "vehicle_genericmud_car": 32,
+     "black": 3
+    },
+    "BumpSampler": {
+     "vehicle_generic_detail2_normal": 13,
+     "akula_minigun_n": 2,
+     "blank_normal": 7,
+     "vehicle_generic_mesh3_normal": 4,
+     "technical_gun_n": 1,
+     "normal_flat_small": 3,
+     "aluminium_n": 1,
+     "annihilator2_missile_n": 1,
+     "lrcgt_detail_n": 1,
+     "nebula_turbo_n2": 1,
+     "calico_turbo_n2": 1
+    },
+    "SpecSampler": {
+     "vehicle_generic_detail_spec": 13,
+     "akula_minigun_spec": 2,
+     "carbon_interior_shader_spec": 1,
+     "vehicle_generic_mesh3": 2,
+     "technical_gun_s": 1,
+     "caracara3_metal_worn_s": 1,
+     "caracara3_metal_scoop_s": 1,
+     "carbon_mesh_shader_spec": 4,
+     "vehicle_generic_mesh4": 3,
+     "aluminium_s": 1,
+     "annihilator2_missile": 1,
+     "lrcgt_detail_s": 1,
+     "vehicle_generic_mesh3_spec": 2,
+     "nebula_turbo_s": 1,
+     "calico_turbo_s": 1
+    }
+   }
+  },
+  "vehicle_paint1.sps": {
+   "materials": 2,
+   "samplers": {
+    "DiffuseSampler": {
+     "akula_worn": 1,
+     "vehicle_generic_smallspecmap": 1
+    },
+    "DamageSampler": {
+     "(none)": 2
+    },
+    "DirtSampler": {
+     "vehicle_genericmud_car": 2
+    },
+    "SpecSampler": {
+     "akula_worn": 1,
+     "vehicle_generic_alloy_silver_spec": 1
+    }
+   }
+  },
+  "vehicle_paint3.sps": {
+   "materials": 2,
+   "samplers": {
+    "DiffuseSampler": {
+     "vehicle_generic_smallspecmap": 2
+    },
+    "DamageSampler": {
+     "(none)": 2
+    },
+    "DiffuseSampler2": {
+     "blank": 2
+    },
+    "DirtSampler": {
+     "vehicle_genericmud_car": 2
+    },
+    "SpecSampler": {
+     "vehicle_generic_smallspecmap": 2
+    }
+   }
+  },
+  "vehicle_paint4.sps": {
+   "materials": 15,
+   "samplers": {
+    "DiffuseSampler": {
+     "vehicle_generic_alloy_silver_spec": 1,
+     "vehicle_generic_smallspecmap": 11,
+     "sentinel5_black": 2,
+     "black": 1
+    },
+    "DamageSampler": {
+     "(none)": 15
+    },
+    "DiffuseSampler2": {
+     "blank": 14,
+     "lrcgt_livery8": 1
+    },
+    "DirtSampler": {
+     "vehicle_genericmud_car": 15
+    },
+    "SpecSampler": {
+     "vehicle_generic_alloy_silver_spec": 9,
+     "vehicle_generic_smallspecmap": 6
+    }
+   }
+  },
+  "vehicle_paint6_enveff.sps": {
+   "materials": 2,
+   "samplers": {
+    "DiffuseSampler": {
+     "savage_camo_1024": 1,
+     "vehicle_generic_worn_diff": 1
+    },
+    "DamageSampler": {
+     "(none)": 2
+    },
+    "SnowSampler0": {
+     "vehicle_generic_worn_env1": 2
+    },
+    "SnowSampler1": {
+     "vehicle_generic_worn_env2": 2
+    },
+    "DiffuseSampler2": {
+     "savage_panels_512": 2
+    },
+    "DirtSampler": {
+     "vehicle_genericmud_car": 2
+    },
+    "BumpSampler2": {
+     "savage_panels_n": 2
+    },
+    "SpecSampler": {
+     "vehicle_generic_worn_spc": 2
+    }
+   }
+  },
+  "vehicle_paint9.sps": {
+   "materials": 3,
+   "samplers": {
+    "DiffuseSampler": {
+     "akula_worn": 1,
+     "blank": 2
+    },
+    "DamageSampler": {
+     "(none)": 3
+    },
+    "SnowSampler0": {
+     "akula_panels": 1,
+     "conada2_panels": 2
+    },
+    "SnowSampler1": {
+     "akula_panels": 1,
+     "conada2_panels": 2
+    },
+    "DiffuseSampler2": {
+     "blank": 3
+    },
+    "DirtSampler": {
+     "vehicle_genericmud_car": 3
+    },
+    "DirtBumpSampler": {
+     "blank_normal": 3
+    },
+    "BumpSampler": {
+     "akula_panels_n": 1,
+     "conada2_panels_n": 2
+    },
+    "SpecSampler": {
+     "akula_worn": 2,
+     "vehicle_generic_smallspecmap": 1
+    }
+   }
+  },
+  "vehicle_shuts.sps": {
+   "materials": 10,
+   "samplers": {
+    "DiffuseSampler": {
+     "vehicle_generic_doorshut": 10
+    },
+    "DamageSampler": {
+     "(none)": 10
+    },
+    "BumpSampler": {
+     "vehicle_generic_doorshut_normal": 10
+    },
+    "SpecSampler": {
+     "vehicle_generic_smallspecmap": 10
+    }
+   }
+  },
+  "vehicle_tire.sps": {
+   "materials": 14,
+   "samplers": {
+    "DiffuseSampler": {
+     "vehicle_generic_tyrewallblack": 9,
+     "vehicle_generic_smallspecmap": 5
+    },
+    "DirtSampler": {
+     "vehicle_generic_tyrewall_dirt": 14
+    },
+    "BumpSampler": {
+     "vehicle_generic_tyrewall_normal": 13,
+     "blank_normal": 1
+    },
+    "SpecSampler": {
+     "vehicle_generic_tyrewall_spec": 9,
+     "carbon_mesh_shader_spec": 5
+    }
+   }
+  },
+  "vehicle_vehglass.sps": {
+   "materials": 12,
+   "samplers": {
+    "DiffuseSampler": {
+     "vehicle_generic_glasswindows2": 10,
+     "cartuccia_lights": 1,
+     "merula_lights": 1
+    },
+    "DamageSampler": {
+     "(none)": 12
+    },
+    "DirtSampler": {
+     "vehicle_generic_glassdirt": 11,
+     "vehicle_genericmud_car": 1
+    },
+    "SpecSampler": {
+     "vehicle_generic_smallspecmap": 12
+    }
+   }
+  },
+  "vehicle_vehglass_inner.sps": {
+   "materials": 10,
+   "samplers": {
+    "DiffuseSampler": {
+     "vehicle_generic_glasswindows2": 10
+    },
+    "DamageSampler": {
+     "(none)": 10
+    },
+    "DirtSampler": {
+     "vehicle_generic_glassdirt": 10
+    },
+    "SpecSampler": {
+     "vehicle_generic_smallspecmap": 10
+    }
+   }
+  }
+ },
+ "about": "Counts from vanilla vehicles. names: vehicles using the texture, and how many carry it in their own ytd. shaders: materials per shader and, per sampler, materials holding each texture name."
+}

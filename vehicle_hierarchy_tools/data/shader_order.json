@@ -1,0 +1,162 @@
+{
+ "firm": [
+  [
+   "vehicle_vehglass_inner",
+   "vehicle_detail2",
+   7
+  ],
+  [
+   "vehicle_lightsemissive",
+   "vehicle_licenseplate",
+   7
+  ],
+  [
+   "vehicle_shuts",
+   "vehicle_licenseplate",
+   7
+  ],
+  [
+   "vehicle_shuts",
+   "vehicle_lightsemissive",
+   8
+  ],
+  [
+   "vehicle_lightsemissive",
+   "vehicle_vehglass",
+   8
+  ],
+  [
+   "vehicle_shuts",
+   "vehicle_vehglass",
+   11
+  ],
+  [
+   "vehicle_vehglass_inner",
+   "vehicle_vehglass",
+   11
+  ]
+ ],
+ "shaders": {
+  "vehicle_badges": {
+   "max": 0.7,
+   "min": 0.25,
+   "n": 9,
+   "rank": 0.5
+  },
+  "vehicle_blurredrotor": {
+   "max": 0.62,
+   "min": 0.13,
+   "n": 4,
+   "rank": 0.282
+  },
+  "vehicle_cutout": {
+   "max": 0.91,
+   "min": 0.31,
+   "n": 4,
+   "rank": 0.792
+  },
+  "vehicle_dash_emissive": {
+   "max": 0.88,
+   "min": 0.09,
+   "n": 11,
+   "rank": 0.75
+  },
+  "vehicle_dash_emissive_opaque": {
+   "max": 0.95,
+   "min": 0.1,
+   "n": 4,
+   "rank": 0.271
+  },
+  "vehicle_detail2": {
+   "max": 0.78,
+   "min": 0.33,
+   "n": 9,
+   "rank": 0.722
+  },
+  "vehicle_emissive_opaque": {
+   "max": 0.5,
+   "min": 0.15,
+   "n": 2,
+   "rank": 0.325
+  },
+  "vehicle_interior2": {
+   "max": 1.0,
+   "min": 0.22,
+   "n": 26,
+   "rank": 0.791
+  },
+  "vehicle_licenseplate": {
+   "max": 0.65,
+   "min": 0.5,
+   "n": 7,
+   "rank": 0.611
+  },
+  "vehicle_lightsemissive": {
+   "max": 0.47,
+   "min": 0.33,
+   "n": 8,
+   "rank": 0.413
+  },
+  "vehicle_mesh": {
+   "max": 1.0,
+   "min": 0.11,
+   "n": 34,
+   "rank": 0.542
+  },
+  "vehicle_paint1": {
+   "max": 0.07,
+   "min": 0.0,
+   "n": 3,
+   "rank": 0.05
+  },
+  "vehicle_paint3": {
+   "max": 0.38,
+   "min": 0.0,
+   "n": 4,
+   "rank": 0.059
+  },
+  "vehicle_paint4": {
+   "max": 1.0,
+   "min": 0.0,
+   "n": 15,
+   "rank": 0.05
+  },
+  "vehicle_paint6_enveff": {
+   "max": 0.08,
+   "min": 0.0,
+   "n": 2,
+   "rank": 0.042
+  },
+  "vehicle_paint9": {
+   "max": 0.08,
+   "min": 0.0,
+   "n": 3,
+   "rank": 0.0
+  },
+  "vehicle_shuts": {
+   "max": 0.58,
+   "min": 0.28,
+   "n": 11,
+   "rank": 0.4
+  },
+  "vehicle_tire": {
+   "max": 1.0,
+   "min": 0.17,
+   "n": 15,
+   "rank": 0.933
+  },
+  "vehicle_vehglass": {
+   "max": 0.94,
+   "min": 0.39,
+   "n": 13,
+   "rank": 0.778
+  },
+  "vehicle_vehglass_inner": {
+   "max": 0.67,
+   "min": 0.17,
+   "n": 11,
+   "rank": 0.25
+  }
+ },
+ "vehicles": 11
+}
