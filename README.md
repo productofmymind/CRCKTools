@@ -97,6 +97,13 @@ This project builds on the work of others, and would not exist without it:
 
 GTA V is a trademark of Take-Two Interactive. This project is not affiliated with Rockstar Games, Take-Two or the Sollumz team.
 
+## Support Sollumz
+
+CRCKTools only exists because of [Sollumz](https://github.com/Sollumz/Sollumz). It does the importing, exporting and the whole data model this add-on stands on, and without it GTA V modding in Blender would still be a pain. If you want to support the tools you use, please support them first:
+
+- Back Sollumz on [Open Collective](https://opencollective.com/sollumz) or [GitHub Sponsors](https://github.com/sponsors/Sollumz).
+- Thanks as well to the Sollumz code contributors, and to dexyfex and the [CodeWalker](https://github.com/dexyfex/CodeWalker) contributors, whose work the wider modding scene builds on.
+
 ## License
 
 GPL-3.0-or-later. See [LICENSE](LICENSE). The bundled meshoptimizer library is MIT licensed (see its licence file above).
