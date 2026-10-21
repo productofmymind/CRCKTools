@@ -15,6 +15,8 @@
 | Ship a smaller file | **Export Compact**: Sollumz's own exporter with a vertex merge that makes files smaller |
 | Fix a wobbling rotor, rename a part, rearrange bones | Local-axes tools, Rename Part, Auto Arrange |
 
+New here? Read the step-by-step [tutorial](docs/TUTORIAL.md).
+
 ## Install
 
 1. Download `CRCKTools-0.15.0.zip` from the [Releases](../../releases) page. (Or zip the *contents* of the `vehicle_hierarchy_tools` folder yourself, with `blender_manifest.toml` at the top level of the zip.)
@@ -97,12 +99,13 @@ This project builds on the work of others, and would not exist without it:
 
 GTA V is a trademark of Take-Two Interactive. This project is not affiliated with Rockstar Games, Take-Two or the Sollumz team.
 
-## Support Sollumz
+## Thanks to Sollumz
 
-CRCKTools only exists because of [Sollumz](https://github.com/Sollumz/Sollumz). It does the importing, exporting and the whole data model this add-on stands on, and without it GTA V modding in Blender would still be a pain. If you want to support the tools you use, please support them first:
+CRCKTools only exists because of [Sollumz](https://github.com/Sollumz/Sollumz). It does the importing, exporting and the whole data model this add-on stands on, and without it GTA V modding in Blender would still be a pain. Thanks to the Sollumz team and its code contributors, and to dexyfex and the [CodeWalker](https://github.com/dexyfex/CodeWalker) contributors, whose work the wider modding scene builds on.
 
-- Back Sollumz on [Open Collective](https://opencollective.com/sollumz) or [GitHub Sponsors](https://github.com/sponsors/Sollumz).
-- Thanks as well to the Sollumz code contributors, and to dexyfex and the [CodeWalker](https://github.com/dexyfex/CodeWalker) contributors, whose work the wider modding scene builds on.
+## Made with AI
+
+This add-on was developed with AI. Most of the code, the tests and the documentation were written with Claude (by Anthropic), while the maintainer directed the work, tested it, and checked it in game. Read the code before you trust it with your files, and report problems in the Issues tab.
 
 ## License
 
