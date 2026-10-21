@@ -75,7 +75,6 @@ Import/export, shader conversion, collision creation, mass, light IDs, cloth and
 
 ## Limits
 
-- Not tested in game. The effect of bone order, model order, physics group order and shader order on the game is not established; the tools make order visible and controllable rather than claiming it matters.
 - Generated LODs are judged by surface distance, normals and UVs against the start mesh, not rendered or run in game. Set LOD distances yourself.
 - The size estimate is not checked against the resource header.
 - Not run on Blender 4.2 yet; performance on very large vehicles is untested.
