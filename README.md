@@ -2,7 +2,7 @@
 
 **CRCKTools** is a Blender add-on for GTA V vehicle modding. It sits **on top of [Sollumz](https://github.com/Sollumz/Sollumz)** and adds what a vehicle workflow is missing: a tree view of the vehicle's parts, one-click checks with fixes, whole-vehicle LOD generation, paint and material tools, and a smaller-file export. It replaces nothing Sollumz does.
 
-**Version 0.15.0** · Blender 4.2+ (tested on 5.2.2) · Sollumz 2.9.x tested · GPL-3.0-or-later
+**Version 0.16.0** · Blender 4.2+ (tested on 5.2.2) · Sollumz 2.9.x tested · GPL-3.0-or-later
 
 ## What it does, in short
 
@@ -11,7 +11,7 @@
 | See how a vehicle is built | A tree of parts: bones, the models bound to them, collisions and LOD slots, in one view |
 | Find out what is wrong | **Check Vehicle**: each problem explained in plain words, with a fix you can preview and apply |
 | Make LODs | **Generate LODs** for the whole vehicle at once, starting from L0 (`_hi`) or L1 |
-| Paint and materials | Paint layers and liveries, default textures, material usage, material order |
+| Paint and materials | Paint layers and liveries, vehicle shaders, default textures, material usage, material order |
 | Ship a smaller file | **Export Compact**: Sollumz's own exporter with a vertex merge that makes files smaller |
 | Fix a wobbling rotor, rename a part, rearrange bones | Local-axes tools, Rename Part, Auto Arrange |
 
@@ -19,7 +19,7 @@ New here? Read the step-by-step [tutorial](docs/TUTORIAL.md).
 
 ## Install
 
-1. Download `CRCKTools-0.15.0.zip` from the [Releases](../../releases) page. (Or zip the *contents* of the `vehicle_hierarchy_tools` folder yourself, with `blender_manifest.toml` at the top level of the zip.)
+1. Download `CRCKTools-0.16.0.zip` from the [Releases](../../releases) page. (Or zip the *contents* of the `vehicle_hierarchy_tools` folder yourself, with `blender_manifest.toml` at the top level of the zip.)
 2. Blender > Edit > Preferences > Get Extensions > the arrow menu > **Install from Disk**, pick the zip, and enable it. **Sollumz must be enabled too.**
 3. Select the vehicle's Fragment (or any object inside it). Everything is in one tab of the 3D Viewport sidebar (press **N**): **CRCKTools**.
 4. Restart Blender after updating the add-on.
@@ -49,6 +49,7 @@ A GTA V vehicle has no object tree. Its hierarchy is a **bone tree** plus the **
 |---|---|
 | **Paint layers and liveries** | A colour variant is a material with another paint layer (Primary, Secondary, Pearlescent, Wheel, ...), as vanilla does it. Add paint materials from any paint shader, make livery materials. |
 | **Default textures** | New materials get the texture names vanilla uses per shader and sampler; *Fill Empty Textures* does it for existing ones. |
+| **Vehicle Shaders** | Every `vehicle_*` shader in one dropdown. *Create Material* makes the material on the selection with the shared textures vanilla vehicles use for that shader already attached; samplers meant for your own textures stay empty. |
 | **Material Usage** | Which materials the vehicle uses, by how many models, polygons and LODs; Select Users; Replace Everywhere; texture report. |
 | **Material Order** | Reorder the shader group. Writes Sollumz's own shader index. **Sort Like Vanilla** orders it the way vanilla vehicles do (paint first, inner glass, shutters, lights ... outer glass, interior, tyres last); a Problems entry offers it as a quick fix. A tendency learned from 11 vehicles, not a proven game rule. |
 

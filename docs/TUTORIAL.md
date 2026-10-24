@@ -6,7 +6,7 @@ Contents: [1. Install](#1-install) · [2. Check the vehicle](#2-check-the-vehicl
 
 ## 1. Install
 
-1. Download `CRCKTools-0.15.0.zip` from the [Releases](../../../releases) page.
+1. Download `CRCKTools-0.16.0.zip` from the [Releases](../../../releases) page.
 2. In Blender: Edit > Preferences > Get Extensions > the arrow menu at the top right > **Install from Disk**. Pick the zip and enable it.
 3. Make sure **Sollumz** is enabled too.
 4. Restart Blender.
