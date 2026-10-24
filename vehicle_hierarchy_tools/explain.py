@@ -113,11 +113,7 @@ CATALOG = {
                                  "Add the matching siren bone or remove the glass bone.", None),
     "HV090_ROTOR_AXIS": ("Rotor spin axis is not square to its blades", "The rotor spins on its local Z, so the blades wobble instead of spinning flat.",
                          "Hierarchy > Local Axes > Align Spin Axis to Geometry.", "Aligns the axis to the blade disc; nothing moves."),
-    # --- export limits
-    "CLOTH_MATERIALS": ("Cloth mesh has more than one material", "A mesh with a cloth shader must have exactly that one material, or it is not treated as cloth.",
-                        "Give the mesh a single cloth material and move any other polygons to a separate model.", None),
-    "CLOTH_VERTS": ("Cloth mesh has too many vertices", "A cloth control mesh cannot exceed 255 vertices.",
-                    "Reduce the cloth mesh (Decimate or dissolve edges) to 255 vertices or fewer.", None),
+    # --- export checks
     "FEW_LODS": ("The vehicle has fewer than 4 LODs", "Vehicles normally carry four LOD meshes; with fewer, the lower detail levels are missing.",
                  "Generate LODs fills the missing slots from the highest one.", None),
     # --- materials

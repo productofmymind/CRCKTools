@@ -10,19 +10,25 @@ call swaps Sollumz's `dedupe_and_get_indices` (ydr/ydrexport.py) for `dedupe_and
 degrees) when deciding what is the same vertex. The surviving vertex keeps its own un-rounded values. Everything else (materials, bones, bounds, physics,
 textures, file writing) is Sollumz's. The swap is undone in a finally block.
 
+Third change: triangles and vertices are reordered for the GPU's vertex cache (meshoptimizer: Forsyth's vertex cache optimisation, then vertex fetch order). The
+vertex cache order puts the vertices of neighbouring triangles next to each other, so the buffers hold long runs of similar values and compress much better
+(the mammoth: 2.40 MB -> 1.83 MB), and the game transforms fewer vertices. The set of triangles is unchanged.
+
 Second change, the larger one: before merging, normals, tangents, positions and UVs are snapped to a fine power-of-two grid (STEPS below). A float from
 Blender carries noise in its lowest bits, which makes the vertex buffer compress badly; snapped values compress far better, and snapping first also lets
 more corners merge. On the mammoth (3.73 MB with Sollumz alone, 3.43 MB with the merge alone) the result is 2.40 MB, with the same triangles
 and a largest error of 0.0005 per normal component (0.05 degrees), 0.06 mm in position and 0.00012 in UV. Colours and bone weights are not touched.
 """
 import contextlib
+import ctypes
 import os
+import sys
 import time
 
 import bpy
 import numpy as np
 
-from . import sollumz_bridge as sz
+from . import meshopt, sollumz_bridge as sz
 
 DEFAULT_DECIMALS = 6
 DECIMALS = {}                             # after snapping, equal values are exactly equal; the default 6 decimals only guards against float noise
@@ -51,13 +57,41 @@ def snap(vertex_arr):
     return out
 
 
+def cache_order(vertices, indices):
+    """Triangles reordered for the vertex cache, then the vertices in order of first use. Same triangles; (vertices, indices)."""
+    try:
+        lib = meshopt.lib()
+    except meshopt.Unavailable:
+        return vertices, indices
+    lib.meshopt_optimizeVertexFetch.restype = ctypes.c_size_t
+    ptr = lambda a: a.ctypes.data_as(ctypes.c_void_p)
+    idx = np.ascontiguousarray(indices, dtype=np.uint32)
+    n = len(vertices)
+    tris = np.empty_like(idx)
+    lib.meshopt_optimizeVertexCache(ptr(tris), ptr(idx), ctypes.c_size_t(len(idx)), ctypes.c_size_t(n))
+    src = np.ascontiguousarray(vertices)
+    out = np.empty_like(src)
+    lib.meshopt_optimizeVertexFetch(ptr(out), ptr(tris), ctypes.c_size_t(len(tris)), ptr(src), ctypes.c_size_t(n), ctypes.c_size_t(src.dtype.itemsize))
+    return out, tris
+
+
+def _is_triangle_geometry():
+    """True when the caller is Sollumz's create_geometries for an ordinary mesh. Cable meshes call the same function with vertices that are not
+    triangles, so their order must stay as it is."""
+    caller = sys._getframe(2)
+    return caller.f_code.co_name == "create_geometries" and caller.f_locals.get("is_cable") is False
+
+
 def dedupe_and_get_indices(vertex_arr):
     """Same contract as Sollumz's function of that name: (vertices without duplicates, indices in triangle order)."""
     STATS["stock"] += len(_unique(vertex_arr, {})[1])
     vertex_arr = snap(vertex_arr)
     _, first, inverse = _unique(vertex_arr, DECIMALS)
     STATS["compact"] += len(first)
-    return vertex_arr[first], np.asarray(inverse, dtype=np.uint32).reshape(-1)
+    out, indices = vertex_arr[first], np.asarray(inverse, dtype=np.uint32).reshape(-1)
+    if len(indices) % 3 == 0 and _is_triangle_geometry():
+        out, indices = cache_order(out, indices)
+    return out, indices
 
 
 @contextlib.contextmanager

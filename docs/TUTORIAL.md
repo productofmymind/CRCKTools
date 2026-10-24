@@ -112,7 +112,7 @@ The variant is created once and reused. **Add Paint Material** makes a new one f
 
 **File > Export > CRCK Export**, or **CRCKTools > Export Info > CRCK Export**. Pick an output folder and, in the panel on the right of the file dialog, the **Output**: **Native (.yft)** writes the game file directly, **CodeWalker XML** writes a text file to import through CodeWalker, **Both** writes both. Native is the default.
 
-It runs Sollumz's own exporter with your Sollumz export settings, with one change: normals, tangents, positions and UVs are rounded to a very fine grid (0.05 degrees for normals, 0.06 mm for positions) and vertices that are then equal are merged. The triangles stay the same. On one test vehicle the file came out 36% smaller than with Sollumz alone. Colours and bone weights are untouched.
+It runs Sollumz's own exporter with your Sollumz export settings, with one change: normals, tangents, positions and UVs are rounded to a very fine grid (0.05 degrees for normals, 0.06 mm for positions) and vertices that are then equal are merged. Triangles and vertices are then put in the order the GPU's vertex cache likes best, which also makes the file compress better. The set of triangles stays the same. On one test vehicle the file came out 51% smaller than with Sollumz alone (3.73 MB to 1.83 MB). Colours and bone weights are untouched.
 
 Select the vehicle's Fragment first. **Estimate Export Size** (same panel) shows a rough size from a trial export and warns at 256 MiB.
 
