@@ -7,7 +7,7 @@ import bpy
 from bpy.props import (BoolProperty, CollectionProperty, EnumProperty, FloatProperty, IntProperty, PointerProperty,
                        StringProperty)
 
-from . import icons, operators, paint, rulecheck, ui
+from . import icons, operators, paint, rulecheck, ui, vehicleshaders
 
 class VHT_MaterialItem(bpy.types.PropertyGroup):
     material: PointerProperty(type=bpy.types.Material)
@@ -85,6 +85,7 @@ class VHT_State(bpy.types.PropertyGroup):
     paint_index: IntProperty(update=lambda self, context: operators.on_paint_index(context))
     paint_shader: EnumProperty(name="Shader", items=paint.shader_items(),
                                default="vehicle_paint4.sps", description="Shader of the new paint material")
+    vehicle_shader: EnumProperty(name="Shader", items=vehicleshaders.items, description="Vehicle shader of the new material")
     paint_layer: EnumProperty(name="Layer", items=[(n, paint.LAYER_LABELS[n], "") for n in paint.LAYERS], default="PRIMARY",
                               description="Which paint colour the new material uses")
     axes_rotation: BoolProperty(name="Rotation", default=True, description="Reset to World / Reset to Parent / Copy change the orientation")

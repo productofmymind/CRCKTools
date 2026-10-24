@@ -4,7 +4,7 @@ import textwrap
 
 import bpy
 
-from . import explain, icons, paint, sollumz_bridge as sz
+from . import explain, icons, paint, sollumz_bridge as sz, vehicleshaders
 
 ICONS = {"ERROR": "CANCEL", "WARNING": "ERROR", "INFO": "INFO", "REVIEW": "VIEWZOOM"}
 CATEGORY = "CRCKTools"
@@ -517,6 +517,31 @@ class VHT_PT_mat_paint(MatSub):
         row.operator("vht.paint_assign", text="Default").layer = "DEFAULT"
 
 
+class VHT_PT_mat_shader(MatSub):
+    bl_label = "Vehicle Shaders"
+    icon = "SHADING_RENDERED"
+
+    def draw(self, context):
+        layout = self.layout
+        st = context.window_manager.vht
+        wrap(layout, "Every vehicle shader Sollumz has. A new material starts with the shared textures vanilla vehicles use for it, "
+                     "so you only add the textures that belong to your vehicle.")
+        layout.prop(st, "vehicle_shader", text="")
+        if st.vehicle_shader:
+            try:
+                rows = vehicleshaders.preview(st.vehicle_shader)
+            except Exception:
+                rows = []
+            box = layout.box()
+            for sampler, tex in rows:
+                r = box.row()
+                r.label(text=sampler.replace("Sampler", ""))
+                r.label(text=tex or "your own texture")
+            if st.vehicle_shader.startswith("vehicle_paint"):
+                layout.prop(st, "paint_layer")
+        layout.operator("vht.shader_add", icon="ADD")
+
+
 class VHT_PT_mat_add(MatSub):
     bl_label = "Add Paint Material"
     icon = "ADD"
@@ -660,5 +685,5 @@ class VHT_PT_order(Sub):
 
 classes = (VHT_UL_findings, VHT_UL_materials, VHT_UL_paint, VHT_UL_usage, VHT_UL_hierarchy,
            VHT_PT_main, VHT_PT_problems, VHT_PT_vehicle_group, VHT_PT_hierarchy, VHT_PT_axes, VHT_PT_couple, VHT_PT_lods,
-           VHT_PT_materials_group, VHT_PT_mat_paint, VHT_PT_mat_add, VHT_PT_mat_livery, VHT_PT_mat_textures, VHT_PT_mat_usage, VHT_PT_mat_transfer, VHT_PT_materials,
+           VHT_PT_materials_group, VHT_PT_mat_paint, VHT_PT_mat_shader, VHT_PT_mat_add, VHT_PT_mat_livery, VHT_PT_mat_textures, VHT_PT_mat_usage, VHT_PT_mat_transfer, VHT_PT_materials,
            VHT_PT_order)

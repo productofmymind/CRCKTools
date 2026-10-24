@@ -957,6 +957,40 @@ class VHT_OT_paint_add(bpy.types.Operator):
         return {"FINISHED"}
 
 
+class VHT_OT_shader_add(bpy.types.Operator):
+    bl_idname = "vht.shader_add"
+    bl_label = "Create Material"
+    bl_description = ("Create a new material with the chosen vehicle shader and put it on the selection (Edit mode: selected faces; Object "
+                      "mode: the active material slot of the selected models). The shared textures vanilla vehicles use for that shader "
+                      "are attached; a sampler meant for the vehicle's own texture stays empty. A model with no material gets it as its first one")
+    bl_options = {"REGISTER", "UNDO"}
+
+    def execute(self, context):
+        from . import paint
+        v = get_vehicle(self, context)
+        if v is None:
+            return {"CANCELLED"}
+        st = state(context)
+        if not st.vehicle_shader:
+            self.report({"ERROR"}, "Pick a shader first.")
+            return {"CANCELLED"}
+        obj = context.active_object
+        old = obj.active_material if obj is not None and obj.type == "MESH" else None
+        mat = sz.create_shader_material(st.vehicle_shader)
+        sz._mod("ydr.operators.materials").post_create_shader_add_default_images(mat)
+        done = textures.apply_defaults(mat)
+        if paint.is_paint_material(mat):
+            mat.sz_paint_layer = st.paint_layer
+        mat.shader_properties.index = paint.next_shader_index(v)
+        if context.mode == "EDIT_MESH" or old is not None:
+            line = paint.assign(context, v, old, mat)
+        else:
+            line = paint.give_first_material(v, context, mat)
+        fill_paint(st, analysis.load(v.frag))
+        self.report({"INFO"}, f"Created {mat.name} with {len(done)} texture(s). {line}")
+        return {"FINISHED"}
+
+
 class VHT_OT_paint_livery(bpy.types.Operator):
     bl_idname = "vht.paint_livery"
     bl_label = "Make Livery Material"
@@ -1361,5 +1395,5 @@ classes = (VHT_OT_inspect, VHT_OT_validate, VHT_OT_suggest, VHT_OT_apply, VHT_OT
            VHT_OT_fix_finding, VHT_OT_rename_part, VHT_OT_arrange, VHT_OT_couple_objects, VHT_OT_couple_bones, VHT_OT_build_parts, VHT_OT_remove_parts, VHT_OT_estimate_size, VHT_OT_export_compact, VHT_OT_move_bone,
            VHT_OT_tree_toggle, VHT_OT_tree_expand, VHT_OT_tree_visible, VHT_OT_tree_show, VHT_OT_tree_lod, VHT_OT_tree_col,
            VHT_OT_tree_move, VHT_OT_tree_grab, VHT_OT_tree_drop, VHT_OT_tree_axes, VHT_OT_tree_attach, VHT_OT_tree_adopt,
-           VHT_OT_paint_refresh, VHT_OT_paint_assign, VHT_OT_paint_add, VHT_OT_paint_livery, VHT_OT_paint_livery_texture, VHT_OT_fill_textures, VHT_OT_lods_generate, VHT_OT_mat_transfer, VHT_OT_usage_refresh, VHT_OT_usage_select, VHT_OT_usage_replace,
+           VHT_OT_paint_refresh, VHT_OT_paint_assign, VHT_OT_paint_add, VHT_OT_shader_add, VHT_OT_paint_livery, VHT_OT_paint_livery_texture, VHT_OT_fill_textures, VHT_OT_lods_generate, VHT_OT_mat_transfer, VHT_OT_usage_refresh, VHT_OT_usage_select, VHT_OT_usage_replace,
            VHT_OT_mat_load, VHT_OT_mat_autosort, VHT_OT_mat_move, VHT_OT_mat_preview)
