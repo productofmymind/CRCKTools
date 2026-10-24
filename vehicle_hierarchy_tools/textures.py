@@ -68,6 +68,19 @@ def _table():
     return _cache["defaults"]
 
 
+RULES_TABLE = os.path.join(os.path.dirname(__file__), "data", "sampler_rules.json")
+STAND_INS = {"checker": "a checker texture, givemechecker", "smallspecmap": "vehicle_generic_smallspecmap"}
+
+
+def sampler_rules(shader_filename):
+    """{sampler: "REQUIRED" | "optional" | "checker" | "smallspecmap"} for a shader: whether an empty sampler matters, or which generic
+    texture usually stands in for it (data/sampler_rules.json). Empty for a shader the table lacks."""
+    if "rules" not in _cache:
+        with open(RULES_TABLE, encoding="utf-8") as f:
+            _cache["rules"] = json.load(f)["shaders"]
+    return _cache["rules"].get(os.path.splitext(shader_filename.lower())[0], {})
+
+
 def default_name(shader_filename, sampler, table=None):
     """The texture name vanilla vehicles give this sampler of this shader, or None. Shaders the survey lacks use what `vehicle_paint*` do (paint
     shaders only) or a neutral fallback: the shared spec for a spec sampler, the shared mud for dirt, `blank` for a second diffuse, a flat normal for

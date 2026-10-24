@@ -324,15 +324,20 @@ def validate_textures(v):
     out = []
     usage, _ = material_usage(v)
     for mat in usage:
-        empty = [n.name for n in mat.node_tree.nodes if n.type == "TEX_IMAGE" and n.name in TEXTURE_SAMPLERS
+        rules = textures.sampler_rules(mat.shader_properties.filename)
+        want = rules or dict.fromkeys(TEXTURE_SAMPLERS, "REQUIRED")  # shader without a table: the three usual samplers
+        empty = [n.name for n in mat.node_tree.nodes if n.type == "TEX_IMAGE" and want.get(n.name, "optional") != "optional"
                  and not getattr(n, "sollumz_texture_name", "")]
         if empty:
             fillable = any(textures.default_name(mat.shader_properties.filename, n.name) for n in mat.node_tree.nodes
                            if n.type == "TEX_IMAGE" and not getattr(n, "sollumz_texture_name", ""))
+            subst = [f"{n} ({textures.STAND_INS[want[n]]})" for n in empty if want[n] in textures.STAND_INS]
             out.append(Finding(WARNING, "EMPTY_TEXTURE_SAMPLER",
                                f"{', '.join(empty)} has no texture, so the export names none for it. Assign textures in the Sollumz shader "
                                "panel" + ("; the fix fills the samplers vanilla vehicles give a generic texture (a sampler that takes "
-                                          "the vehicle's own texture stays empty)." if fillable else "."), mat.name, "material",
+                                          "the vehicle's own texture stays empty)." if fillable else ".")
+                               + " Optional samplers (for example DamageSampler) are not checked."
+                               + (f" Usual stand-ins: {'; '.join(subst)}." if subst else ""), mat.name, "material",
                                {"op": "fill_textures", "material": mat.name} if fillable else None))
     return out
 
@@ -498,10 +503,10 @@ def wheel_donor(bone, with_collision):
 
 def validate(v, profile=None):
     """All findings. `profile` (None, "AUTO" or a profile name) switches on the profile-required-bone checks."""
-    from . import rulecheck  # imported late: rulecheck imports this module
+    from . import exportchecks, rulecheck  # imported late: rulecheck imports this module
     return (validate_structure(v) + validate_hierarchy(v) + validate_materials(v) + validate_textures(v)
             + validate_order(v) + validate_duplicates(v) + validate_mesh_attrs(v)
-            + rulecheck.validate_rules(v, profile))
+            + rulecheck.validate_rules(v, profile) + exportchecks.validate_exports(v))
 
 
 def _ancestors(obj):
