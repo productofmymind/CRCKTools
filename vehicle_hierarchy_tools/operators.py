@@ -1256,6 +1256,10 @@ class VHT_OT_export_compact(bpy.types.Operator):
                       "grid and merge equal vertices. Same triangles, same look, a much smaller file")
 
     directory: bpy.props.StringProperty(name="Output directory", subtype="DIR_PATH", options={"HIDDEN"})
+    output: EnumProperty(name="Output", default="NATIVE", items=[
+        ("NATIVE", "Native (.yft)", "The game's own binary file, written directly. No CodeWalker step needed"),
+        ("CWXML", "CodeWalker XML (.yft.xml)", "A text file to import through CodeWalker, which then writes the .yft"),
+        ("BOTH", "Both", "Write the native file and the XML")])
 
     def invoke(self, context, event):
         context.window_manager.fileselect_add(self)
@@ -1269,7 +1273,7 @@ class VHT_OT_export_compact(bpy.types.Operator):
             self.report({"ERROR"}, "Choose an output folder.")
             return {"CANCELLED"}
         try:
-            files, stock, compact = compactexport.export(context, v.frag, bpy.path.abspath(self.directory))
+            files, stock, compact = compactexport.export(context, v.frag, bpy.path.abspath(self.directory), self.output)
         except Exception as e:  # exporter failures are reported, not raised through the UI
             self.report({"ERROR"}, f"Export failed: {e}")
             return {"CANCELLED"}

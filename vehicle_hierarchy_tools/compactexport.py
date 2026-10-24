@@ -72,8 +72,26 @@ def patched():
         mod.dedupe_and_get_indices = original
 
 
-def export(context, frag, directory):
-    """Export `frag` with Sollumz's exporter and its settings from the user's preferences. Returns ([(file, bytes)], stock vertices, written vertices)."""
+FORMATS = {"NATIVE": {"NATIVE"}, "CWXML": {"CWXML"}, "BOTH": {"NATIVE", "CWXML"}}
+
+
+def export_kwargs(fmt):
+    """Arguments for sollumz.export_assets: the user's own Sollumz export settings, with the output format(s) replaced by `fmt`."""
+    prefs = sz._mod("sollumz_preferences").get_export_settings()
+    op_props = bpy.ops.sollumz.export_assets.get_rna_type().properties
+    kw = {}
+    for p in prefs.bl_rna.properties:
+        i = p.identifier
+        if i in ("rna_type", "name") or i not in op_props or op_props[i].is_readonly:
+            continue
+        kw[i] = getattr(prefs, i)
+    kw.update(target_formats=FORMATS[fmt], direct_export=True, use_custom_settings=True)
+    return kw
+
+
+def export(context, frag, directory, fmt="NATIVE"):
+    """Export `frag` with Sollumz's exporter and the user's Sollumz export settings, writing `fmt` ("NATIVE", "CWXML" or "BOTH").
+    Returns ([(file, bytes)], stock vertices, written vertices)."""
     view = context.view_layer
     prev_active, prev_sel = view.objects.active, [o for o in view.objects if o.select_get()]
     STATS.update(stock=0, compact=0)
@@ -84,7 +102,7 @@ def export(context, frag, directory):
         frag.select_set(True)
         view.objects.active = frag
         with patched():
-            bpy.ops.sollumz.export_assets(directory=directory, direct_export=True)
+            bpy.ops.sollumz.export_assets(directory=directory, **export_kwargs(fmt))
     finally:
         frag.select_set(False)
         for o in prev_sel:
