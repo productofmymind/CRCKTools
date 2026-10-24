@@ -9,6 +9,11 @@ What this does: runs `sollumz.export_assets` with the user's own Sollumz export 
 call swaps Sollumz's `dedupe_and_get_indices` (ydr/ydrexport.py) for `dedupe_and_get_indices` below, which rounds normals and tangents to 3 decimals (0.06
 degrees) when deciding what is the same vertex. The surviving vertex keeps its own un-rounded values. Everything else (materials, bones, bounds, physics,
 textures, file writing) is Sollumz's. The swap is undone in a finally block.
+
+Second change, the larger one: before merging, normals, tangents, positions and UVs are snapped to a fine power-of-two grid (STEPS below). A float from
+Blender carries noise in its lowest bits, which makes the vertex buffer compress badly; snapped values compress far better, and snapping first also lets
+more corners merge. On the mammoth (3.73 MB with Sollumz alone, 3.43 MB with the merge alone) the result is 2.40 MB, with the same triangles
+and a largest error of 0.0005 per normal component (0.03 degrees), 0.06 mm in position and 0.00012 in UV. Colours and bone weights are not touched.
 """
 import contextlib
 import os
@@ -20,7 +25,9 @@ import numpy as np
 from . import sollumz_bridge as sz
 
 DEFAULT_DECIMALS = 6
-DECIMALS = {"Normal": 3, "Tangent": 3}   # normals and tangents: 0.001 is about 0.06 degrees
+DECIMALS = {}                             # after snapping, equal values are exactly equal; the default 6 decimals only guards against float noise
+STEPS = {"Normal": 1 / 1024, "Tangent": 1 / 1024, "Position": 1 / 8192,
+         "TexCoord0": 1 / 4096, "TexCoord1": 1 / 4096, "TexCoord2": 1 / 4096, "TexCoord3": 1 / 4096}  # powers of two, so the low mantissa bits become zeros
 STATS = {"stock": 0, "compact": 0}
 
 
@@ -34,11 +41,22 @@ def _unique(vertex_arr, decimals):
     return np.unique(flat, axis=0, return_index=True, return_inverse=True)
 
 
+def snap(vertex_arr):
+    """A copy of the vertex array with the attributes in STEPS rounded to their grid."""
+    out = vertex_arr.copy()
+    for name, step in STEPS.items():
+        if name in out.dtype.names:
+            a = out[name]
+            out[name] = (np.round(a.astype(np.float64) / step) * step).astype(a.dtype)
+    return out
+
+
 def dedupe_and_get_indices(vertex_arr):
     """Same contract as Sollumz's function of that name: (vertices without duplicates, indices in triangle order)."""
+    STATS["stock"] += len(_unique(vertex_arr, {})[1])
+    vertex_arr = snap(vertex_arr)
     _, first, inverse = _unique(vertex_arr, DECIMALS)
     STATS["compact"] += len(first)
-    STATS["stock"] += len(_unique(vertex_arr, {})[1])
     return vertex_arr[first], np.asarray(inverse, dtype=np.uint32).reshape(-1)
 
 

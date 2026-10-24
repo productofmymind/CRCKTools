@@ -112,7 +112,7 @@ The variant is created once and reused. **Add Paint Material** makes a new one f
 
 **File > Export > RAGE Asset, compact (.yft ...)**, or **CRCKTools > Export Info > Export Compact**. Pick an output folder.
 
-It runs Sollumz's own exporter with your Sollumz export settings, with one change: vertices that differ only by tiny float noise in their normals are merged. The triangles stay the same. On one test vehicle the file came out 9% smaller than with Sollumz alone.
+It runs Sollumz's own exporter with your Sollumz export settings, with one change: normals, tangents, positions and UVs are rounded to a very fine grid (0.03 degrees for normals, 0.06 mm for positions) and vertices that are then equal are merged. The triangles stay the same. On one test vehicle the file came out 36% smaller than with Sollumz alone. Colours and bone weights are untouched.
 
 Select the vehicle's Fragment first. **Estimate Export Size** (same panel) shows a rough size from a trial export and warns at 256 MiB.
 

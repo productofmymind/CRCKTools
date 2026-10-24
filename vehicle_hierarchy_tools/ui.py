@@ -663,10 +663,7 @@ class VHT_PT_order(Sub):
         layout = self.layout
         st = context.window_manager.vht
         layout.operator("vht.export_compact", icon="EXPORT")
-        wrap(layout, "Export Compact is Sollumz's export with your Sollumz export settings and a vertex merge that ignores float noise: same triangles, fewer vertices, smaller files. "
-                     "Pick the output folder.")
         layout.operator("vht.estimate_size", icon="FILE_TICK")
-        wrap(layout, "The order Sollumz will write, whatever the Outliner shows. Refresh Hierarchy to fill it.")
         if st.size_report:
             wrap(layout.box(), st.size_report)
         section, col, shown = None, None, 0

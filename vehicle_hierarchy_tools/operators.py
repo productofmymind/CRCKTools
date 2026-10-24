@@ -960,9 +960,9 @@ class VHT_OT_paint_add(bpy.types.Operator):
 class VHT_OT_shader_add(bpy.types.Operator):
     bl_idname = "vht.shader_add"
     bl_label = "Create Material"
-    bl_description = ("Create a new material with the chosen vehicle shader and put it on the selection (Edit mode: selected faces; Object "
-                      "mode: the active material slot of the selected models). The shared textures vanilla vehicles use for that shader "
-                      "are attached; a sampler meant for the vehicle's own texture stays empty. A model with no material gets it as its first one")
+    bl_description = ("Create a new material with the chosen vehicle shader and add it as a new slot of the selected models. In Edit mode, selected faces "
+                      "are moved to it. Existing materials are never replaced. The shared textures vanilla vehicles use for that shader "
+                      "are attached; a sampler meant for the vehicle's own texture stays empty.")
     bl_options = {"REGISTER", "UNDO"}
 
     def execute(self, context):
@@ -982,10 +982,10 @@ class VHT_OT_shader_add(bpy.types.Operator):
         if paint.is_paint_material(mat):
             mat.sz_paint_layer = st.paint_layer
         mat.shader_properties.index = paint.next_shader_index(v)
-        if context.mode == "EDIT_MESH" or old is not None:
-            line = paint.assign(context, v, old, mat)
+        if context.mode == "EDIT_MESH" and paint.selected_face_count(context):
+            line = paint.assign(context, v, old, mat)  # the selected faces move to the new material; the old one stays in its slot
         else:
-            line = paint.give_first_material(v, context, mat)
+            line = paint.add_slot(v, context, mat)     # a new slot; no existing material is replaced
         fill_paint(st, analysis.load(v.frag))
         self.report({"INFO"}, f"Created {mat.name} with {len(done)} texture(s). {line}")
         return {"FINISHED"}

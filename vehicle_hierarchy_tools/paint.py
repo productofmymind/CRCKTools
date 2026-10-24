@@ -202,3 +202,22 @@ def assign(context, v, base, new):
     for o in models:
         sz.prepare_mesh_for_material(o, new)
     return f"{n} slot(s) on {len(models)} model(s) now use {new.name}"
+
+
+def add_slot(v, context, mat):
+    """Object mode: `mat` becomes one more material slot of the selected models (every LOD mesh), and the active slot of each. Nothing that is
+    already there is replaced."""
+    obj = context.active_object
+    models = [o for o in context.selected_objects if o in v.models] or ([obj] if obj in v.models else [])
+    done = []
+    for o in models:
+        for _, me in sz.lod_meshes(o):
+            if not any(m is mat for m in me.materials):
+                me.materials.append(mat)
+        o.active_material_index = max(0, len(o.data.materials) - 1)
+        sz.prepare_mesh_for_material(o, mat)
+        done.append(o.name)
+    if done:
+        return f"{mat.name} is a new material slot of {', '.join(done[:4])}{'...' if len(done) > 4 else ''}; assign it to faces in Edit mode"
+    return "Select a model to add it to."
+
