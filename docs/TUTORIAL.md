@@ -2,7 +2,7 @@
 
 A step-by-step guide to the main tools. You need Blender 4.2+, Sollumz 2.9.x and a GTA V vehicle imported with Sollumz.
 
-Contents: [1. Install](#1-install) · [2. Check the vehicle](#2-check-the-vehicle) · [3. Fix problems](#3-fix-problems) · [4. The part tree](#4-the-part-tree) · [5. Generate LODs](#5-generate-lods) · [6. Materials](#6-materials) · [7. Export Compact](#7-export-compact) · [8. Tips](#8-tips-and-troubleshooting)
+Contents: [1. Install](#1-install) · [2. Check the vehicle](#2-check-the-vehicle) · [3. Fix problems](#3-fix-problems) · [4. The part tree](#4-the-part-tree) · [5. Generate LODs](#5-generate-lods) · [6. Materials](#6-materials) · [7. CRCK Export](#7-crck-export) · [8. Tips](#8-tips-and-troubleshooting)
 
 ## 1. Install
 
@@ -108,11 +108,11 @@ The variant is created once and reused. **Add Paint Material** makes a new one f
 - **Default Textures** gives new materials the texture names vanilla vehicles use. **Fill Empty Textures** does the same for existing ones.
 - **Usage and Textures** shows which materials the vehicle uses, by how many models and polygons. Select Users selects them, Replace Everywhere swaps one material for another on every LOD.
 
-## 7. Export Compact
+## 7. CRCK Export
 
-**File > Export > RAGE Asset, compact (.yft ...)**, or **CRCKTools > Export Info > Export Compact**. Pick an output folder.
+**File > Export > CRCK Export**, or **CRCKTools > Export Info > CRCK Export**. Pick an output folder.
 
-It runs Sollumz's own exporter with your Sollumz export settings, with one change: normals, tangents, positions and UVs are rounded to a very fine grid (0.03 degrees for normals, 0.06 mm for positions) and vertices that are then equal are merged. The triangles stay the same. On one test vehicle the file came out 36% smaller than with Sollumz alone. Colours and bone weights are untouched.
+It runs Sollumz's own exporter with your Sollumz export settings, with one change: normals, tangents, positions and UVs are rounded to a very fine grid (0.05 degrees for normals, 0.06 mm for positions) and vertices that are then equal are merged. The triangles stay the same. On one test vehicle the file came out 36% smaller than with Sollumz alone. Colours and bone weights are untouched.
 
 Select the vehicle's Fragment first. **Estimate Export Size** (same panel) shows a rough size from a trial export and warns at 256 MiB.
 

@@ -12,7 +12,7 @@
 | Find out what is wrong | **Check Vehicle**: each problem explained in plain words, with a fix you can preview and apply |
 | Make LODs | **Generate LODs** for the whole vehicle at once, starting from L0 (`_hi`) or L1 |
 | Paint and materials | Paint layers and liveries, vehicle shaders, default textures, material usage, material order |
-| Ship a smaller file | **Export Compact**: Sollumz's own exporter with fine rounding and a vertex merge that make files much smaller |
+| Ship a smaller file | **CRCK Export**: Sollumz's own exporter with fine rounding and a vertex merge that make files much smaller |
 | Fix a wobbling rotor, rename a part, rearrange bones | Local-axes tools, Rename Part, Auto Arrange |
 
 New here? Read the step-by-step [tutorial](docs/TUTORIAL.md).
@@ -41,7 +41,7 @@ A GTA V vehicle has no object tree. Its hierarchy is a **bone tree** plus the **
 | **Local Axes** | Center to Object, Reset to Parent/World, Copy From Grabbed, Origin to 3D Cursor (rotation and position switches) and **Align Spin Axis to Geometry**, all without moving geometry, children or collisions. Fixes rotor wobble. |
 | **Parts and Bone Order** | Bind several objects to one bone, or several bones under one (preview, then Apply, one undo step). Move bones up/down among siblings. **Rename Part** renames bone, models, collisions, mesh data and vertex groups together, with find/replace. Part collections mirror the bone tree in the Outliner. |
 | **Problems** | **Check Vehicle** lists each problem in plain words: what is wrong (with your names), why it matters, how to fix it by hand, and a previewable **quick fix** where one exists. 51 kinds explained, including **wheel bones without a collision** (the quick fix copies another wheel's collision, or builds a disc from the wheel model). Rules are data (`data/vehicle_rules.json`), graded by confidence, and silent on the vanilla vehicles tested. |
-| **Export Info** | The order Sollumz will actually write, and a size estimate from a trial export (warns at 256 MiB). **Export Compact** (also under File > Export) runs Sollumz's exporter with your settings but rounds normals, tangents, positions and UVs to a very fine grid (0.03 degrees, 0.06 mm) and merges equal vertices: a test vehicle re-exported 36% smaller than with Sollumz alone, with identical triangles. |
+| **Export Info** | The order Sollumz will actually write, and a size estimate from a trial export (warns at 256 MiB). **CRCK Export** (also under File > Export) runs Sollumz's exporter with your settings but rounds normals, tangents, positions and UVs to a very fine grid (0.05 degrees, 0.06 mm) and merges equal vertices: a test vehicle re-exported 36% smaller than with Sollumz alone, with identical triangles. |
 
 ### Materials
 

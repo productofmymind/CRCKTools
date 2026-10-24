@@ -144,7 +144,7 @@ classes = (VHT_MaterialItem, VHT_TreeRow, VHT_PaintRow, VHT_UsageRow, VHT_OrderR
 
 
 def menu_export(self, context):
-    self.layout.operator("vht.export_compact", text="RAGE Asset, compact (.yft ...)")
+    self.layout.operator("vht.export_compact", text="CRCK Export")
 
 
 def register():

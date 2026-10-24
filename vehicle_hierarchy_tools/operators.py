@@ -1251,9 +1251,9 @@ class VHT_OT_estimate_size(bpy.types.Operator):
 
 class VHT_OT_export_compact(bpy.types.Operator):
     bl_idname = "vht.export_compact"
-    bl_label = "Export Compact"
-    bl_description = ("Export the vehicle with Sollumz's exporter and your Sollumz export settings, but merge vertices that differ only by float noise in their "
-                      "normals. Same triangles, same look, fewer vertices and a smaller file")
+    bl_label = "CRCK Export"
+    bl_description = ("Export the vehicle with Sollumz's exporter and your Sollumz export settings, but round normals, tangents, positions and UVs to a very fine "
+                      "grid and merge equal vertices. Same triangles, same look, a much smaller file")
 
     directory: bpy.props.StringProperty(name="Output directory", subtype="DIR_PATH", options={"HIDDEN"})
 

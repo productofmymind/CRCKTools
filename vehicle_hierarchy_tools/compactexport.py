@@ -1,4 +1,4 @@
-"""Compact export: Sollumz's own exporter, with one change, a vertex merge that tolerates float noise.
+"""CRCK Export (compact export): Sollumz's own exporter, with one change, a vertex merge that tolerates float noise.
 
 Why: Sollumz writes one vertex per Blender face corner and merges two only when every attribute (position, normal, tangent, UVs, colours, weights) is equal
 after rounding to 6 decimals. Blender computes the normal of a corner from its surrounding faces, and corners of one vertex end up with normals that differ
@@ -13,7 +13,7 @@ textures, file writing) is Sollumz's. The swap is undone in a finally block.
 Second change, the larger one: before merging, normals, tangents, positions and UVs are snapped to a fine power-of-two grid (STEPS below). A float from
 Blender carries noise in its lowest bits, which makes the vertex buffer compress badly; snapped values compress far better, and snapping first also lets
 more corners merge. On the mammoth (3.73 MB with Sollumz alone, 3.43 MB with the merge alone) the result is 2.40 MB, with the same triangles
-and a largest error of 0.0005 per normal component (0.03 degrees), 0.06 mm in position and 0.00012 in UV. Colours and bone weights are not touched.
+and a largest error of 0.0005 per normal component (0.05 degrees), 0.06 mm in position and 0.00012 in UV. Colours and bone weights are not touched.
 """
 import contextlib
 import os
